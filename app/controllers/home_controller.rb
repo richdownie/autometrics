@@ -3,8 +3,8 @@ class HomeController < ApplicationController
   end
   
   def dump
-    Result.create(:title => "#{@testing_title}")
-    redirect_to root_path
+    Result.create(:title => @testing_title)
+    redirect_to restults_path
   end
   
   # def update
