@@ -3,8 +3,9 @@ class HomeController < ApplicationController
   end
   
   def dump
-    Result.create(:title => @testing_title)
-    redirect_to restults_path
+    Result.create(:title => "Green")
+    Result.create(:title => "#{@testing_title}")
+    redirect_to results_path
   end
   
   # def update
