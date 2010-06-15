@@ -3,5 +3,6 @@ Then /^I test out autometrics$/ do
 end
 
 Then /^I dump some data$/ do
+  @push = "You"
   @browser.goto(@autometrics + "/home/dump")
 end
