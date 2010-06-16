@@ -60,8 +60,8 @@ end
 Before do
   @browser = browser
   @random = rand(9999999).to_s
-  @testing_title = "Hello World"
-  @autometrics = "http://localhost:3000"
+  # @autometrics = "http://localhost:3000"
+  @autometrics = "http://autometrics.heroku.com"
 
   @account_service_url = "https://qaaccount.rollstream.com/"
   @community_url = "https://qaauto.rollstream.com/"
