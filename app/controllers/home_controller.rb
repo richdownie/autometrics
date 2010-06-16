@@ -3,20 +3,13 @@ class HomeController < ApplicationController
   end
   
   def dump
-    Result.create(:title => "Green")
-    Result.create(:title => "#{@@push}")
-    Result.create(:title => @@push)
+    Result.create(:title => params[:push])
     redirect_to results_path
   end
   
-  # def update
-  #   @user.password = params[:user][:password]
-  #   @user.password_confirmation = params[:user][:password_confirmation]
-  #   if @user.save
-  #     flash[:notice] = "Password successfully updated"
-  #     redirect_to account_path
-  #   else
-  #     render :action => :edit
-  #   end
-  # end
+  private
+
+  def fail_unless_in_development_mode
+    raise unless %w(development).include?(Rails.env)
+  end
 end

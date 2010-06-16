@@ -61,7 +61,7 @@ Before do
   @browser = browser
   @random = rand(9999999).to_s
   @testing_title = "Hello World"
-  @autometrics = "http://autometrics.heroku.com"
+  @autometrics = "http://localhost:3000"
 
   @account_service_url = "https://qaaccount.rollstream.com/"
   @community_url = "https://qaauto.rollstream.com/"
@@ -83,20 +83,21 @@ hour = Time.now.hour
 
 
 if hour <= 6 || hour >= 18
- # if hour <= 6 || hour >= 18 || day == "Sat" or "Sun"
   After do |scenario|
     if(scenario.failed?)
-        Broach.settings = { 'account' => 'rollstream', 'token' => 'cc31a48b6261fc8263d83d115ae212cd5bd5166b' }
-        Broach.speak('Experiment Room', "*******************************************************************************************")
-        Broach.speak('Experiment Room', "cucumber " + "#{scenario.backtrace_line}")
-        Broach.speak('Experiment Room', "Exception " + "#{scenario.exception.message}")
+      @browser.goto(@autometrics + "/home/dump?push=#{scenario.backtrace_line}")
     end
-  end
-
-  at_exit do  
-    Broach.settings = { 'account' => 'rollstream', 'token' => 'cc31a48b6261fc8263d83d115ae212cd5bd5166b' }
-    Broach.speak('Experiment Room', "Browser: " + "#{browser}")
-    Broach.speak('Experiment Room', "Total Run Time " + "#{Time.now.to_i - start_time}" + " seconds")
-    Broach.speak('Experiment Room', "*******************************************************************************************")
+#         Broach.settings = { 'account' => 'rollstream', 'token' => 'cc31a48b6261fc8263d83d115ae212cd5bd5166b' }
+#         Broach.speak('Experiment Room', "*******************************************************************************************")
+#         Broach.speak('Experiment Room', "cucumber " + "#{scenario.backtrace_line}")
+#         Broach.speak('Experiment Room', "Exception " + "#{scenario.exception.message}")
+#     end
+#   end
+# 
+#   at_exit do  
+#     Broach.settings = { 'account' => 'rollstream', 'token' => 'cc31a48b6261fc8263d83d115ae212cd5bd5166b' }
+#     Broach.speak('Experiment Room', "Browser: " + "#{browser}")
+#     Broach.speak('Experiment Room', "Total Run Time " + "#{Time.now.to_i - start_time}" + " seconds")
+#     Broach.speak('Experiment Room', "*******************************************************************************************")
   end  
 end
