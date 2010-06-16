@@ -1,1 +1,2 @@
-/features/support/env.rb
+features/support/env.rb
+db/*
