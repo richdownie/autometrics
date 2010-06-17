@@ -82,11 +82,7 @@ hour = Time.now.hour
 # day = Time.now.strftime("%a")
 
 
-if hour <= 6 || hour >= 18
-  After do |scenario|
-    if(scenario.failed?)
-      @browser.goto(@autometrics + "/home/dump?push=#{scenario.backtrace_line}")
-    end
+# if hour <= 6 || hour >= 18
 #         Broach.settings = { 'account' => 'rollstream', 'token' => 'cc31a48b6261fc8263d83d115ae212cd5bd5166b' }
 #         Broach.speak('Experiment Room', "*******************************************************************************************")
 #         Broach.speak('Experiment Room', "cucumber " + "#{scenario.backtrace_line}")
@@ -99,5 +95,11 @@ if hour <= 6 || hour >= 18
 #     Broach.speak('Experiment Room', "Browser: " + "#{browser}")
 #     Broach.speak('Experiment Room', "Total Run Time " + "#{Time.now.to_i - start_time}" + " seconds")
 #     Broach.speak('Experiment Room', "*******************************************************************************************")
-  end  
+
+# end
+
+After do |scenario|
+  if(scenario.failed?)
+    @browser.goto(@autometrics + "/home/dump?push=#{scenario.backtrace_line}")
+  end
 end
