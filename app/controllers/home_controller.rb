@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
   
   def dump
-    Result.create(:title => params[:push], :tag => params[:tag])
+    Result.create(:title => params[:push])
     redirect_to results_path
   end
   
