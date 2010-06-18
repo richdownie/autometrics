@@ -2,9 +2,7 @@ class ResultsController < ApplicationController
   before_filter :authorize, :only => [:index]
   
   def index
-  
-    @results = Result.find(:all, :limit => 300, :order => "created_at DESC")
-    @results = Result.paginate :page => params[:page]
+    @results = Result.paginate :page => params[:page], :order => 'created_at DESC'
     
     respond_to do |format|
       format.html # index.html.erb
