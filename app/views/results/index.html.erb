@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-    <th>File</th>
     <th>When?</th>
+    <th>File</th>
   </tr>
 
 <% @results.each do |result| %>
   <tr>
-    <td><b><%=h truncate(result.title, :length => 100) %></b></td>
-    <td><%=h result.created_at.strftime("%A " + "at %I:%M%p") %></td>
+  <td><%=h result.created_at.strftime("%A " + "at %I:%M%p") %></td>
+    <td><i><%=h truncate(result.title, :length => 100) %></i></td>
   </tr>
 <% end %>
 </table>
