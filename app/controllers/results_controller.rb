@@ -2,7 +2,7 @@ class ResultsController < ApplicationController
   # GET /results
   # GET /results.xml
   def index
-    @results = Result.all
+    @results = Result.find(:all, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
