@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
   
   def dump
-    Result.create(:title => params[:push].gsub("features/", ""))
+    Result.create(:title => params[:push].gsub("features\", ""))
     redirect_to results_path
   end
   
