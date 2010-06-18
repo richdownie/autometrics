@@ -3,7 +3,7 @@ class ResultsController < ApplicationController
   # GET /results.xml
   def index
     @results = Result.find(:all, :order => "created_at DESC")
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @results }
