@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
   
   def admin?
-    session[:password] == "golfhack"
+    session[:password] == "upstate44"
   end
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
