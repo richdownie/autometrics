@@ -1,11 +1,13 @@
 <h1>Watircuke Results</h1>
 <p><%= link_to 'Logout', logout_path %>
-
+  
+  <div id="results">
 <table>
   <tr>
     <th>When?</th>
     <th>File</th>
   </tr>
+  
 
 <% @results.each do |result| %>
   <tr>
@@ -14,3 +16,6 @@
   </tr>
 <% end %>
 </table>
+  <%= will_paginate @results %>
+
+</div>
