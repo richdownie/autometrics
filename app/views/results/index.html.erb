@@ -8,7 +8,7 @@
 
 <% @results.each do |result| %>
   <tr>
-  <td><%=h result.created_at.strftime("%A " + "at %I:%M%p") %></td>
+  <td><%=h result.created_at.strftime("%A " + "at %I:%M%p") %> **** </td>
     <td><i><%=h truncate(result.title, :length => 100) %></i></td>
   </tr>
 <% end %>
