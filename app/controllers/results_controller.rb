@@ -7,13 +7,7 @@ class ResultsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @results }
-      format.js {
-        render :update do |page|
-          # 'page.replace' will replace full "results" block...works for this example
-          # 'page.replace_html' will replace "results" inner html...useful elsewhere
-          page.replace 'results', :partial => 'search_results'
-        end
-      }
+      format.atom
 
       
     end
