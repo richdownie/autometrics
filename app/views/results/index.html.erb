@@ -9,7 +9,7 @@
 <% @results.each do |result| %>
   <tr>
     <td><b><%=h truncate(result.title, :length => 100) %></b></td>
-    <td><%=h time_ago_in_words(result.created_at) %></td>
+    <td><%=h result.created_at.strftime("%A " + "at %I:%M%p") %></td>
   </tr>
 <% end %>
 </table>
