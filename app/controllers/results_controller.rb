@@ -3,7 +3,7 @@ class ResultsController < ApplicationController
   
   def index
   
-    @results = Result.find(:all, :order => "created_at DESC")
+    @results = Result.find(:all, :limit => 300, :order => "created_at DESC")
     @results = Result.paginate :page => params[:page]
     
     respond_to do |format|
