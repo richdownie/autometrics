@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @results = Result.find(:all, :order => 'created_at DESC')
   end
   
   def dump
