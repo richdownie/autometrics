@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title("AutoMetrics")
+  feed.title("Autometrics")
   feed.update(@results.first.created_at)
   
   @results.each do |result|

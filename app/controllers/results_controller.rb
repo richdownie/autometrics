@@ -7,9 +7,9 @@ class ResultsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @results }
+      format.json { render :json => @results }
       format.atom
 
-      
     end
   end
   
