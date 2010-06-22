@@ -1,6 +1,13 @@
 class HomeController < ApplicationController
   def index
     @results = Result.find(:all, :order => 'created_at DESC')
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @results }
+      format.json { render :json => @results }
+      format.atom
+    end
   end
   
   def dump

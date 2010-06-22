@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :results
   map.resources :sessions
+  map.resources :home
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -11,7 +12,6 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
-  map.resutls 'results', :controller => 'results'
   
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
