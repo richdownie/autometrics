@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   
   def dump
     Result.create(:title => params[:push].gsub("features", ""))
-    redirect_to home_path
+    redirect_to results_path
   end
   
   private
