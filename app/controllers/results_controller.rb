@@ -2,7 +2,7 @@ class ResultsController < ApplicationController
   before_filter :authorize, :only => [:index]
   
   def index
-    @results = Result.paginate :page => params[:page], :order => 'created_at DESC'
+    @results = Result.paginate :page => params[:page], :order => 'created_at DESC', :conditions => ["created_at >= ?", 3.days.ago]
     
     respond_to do |format|
       format.html # index.html.erb
