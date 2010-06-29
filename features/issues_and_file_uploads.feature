@@ -1,1 +1,0 @@
-Feature: Implement cucumber stories for adding & editing issues that include file upload fields
