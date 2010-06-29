@@ -1,0 +1,18 @@
+<p>
+  <b>Run time:</b>
+  <%=h @timing.run_time %>
+</p>
+
+<p>
+  <b>Browser:</b>
+  <%=h @timing.browser %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%=h @timing.tags %>
+</p>
+
+
+<%= link_to 'Edit', edit_timing_path(@timing) %> |
+<%= link_to 'Back', timings_path %>

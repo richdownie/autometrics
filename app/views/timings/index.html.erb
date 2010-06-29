@@ -1,0 +1,24 @@
+<h1>Listing timings</h1>
+
+<table>
+  <tr>
+    <th>Run time</th>
+    <th>Browser</th>
+    <th>Tags</th>
+  </tr>
+
+<% @timings.each do |timing| %>
+  <tr>
+    <td><%=h timing.run_time %></td>
+    <td><%=h timing.browser %></td>
+    <td><%=h timing.tags %></td>
+    <td><%= link_to 'Show', timing %></td>
+    <td><%= link_to 'Edit', edit_timing_path(timing) %></td>
+    <td><%= link_to 'Destroy', timing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New timing', new_timing_path %>

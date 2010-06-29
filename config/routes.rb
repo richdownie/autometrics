@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :timings
+
   map.resources :results
   map.resources :sessions
   # map.resources :home
