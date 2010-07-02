@@ -1,7 +1,7 @@
 class FailuresController < ApplicationController
 before_filter :authorize, :only => [:index]
   def index
-    start_date = params[:date] || 1.week.ago
+    start_date = params[:date].blank? ? 1.week.ago : params[:date]
     
     @activities_feature = Result.activities_feature.since(start_date).count
     @issue_admin_feature = Result.issue_admin_feature.since(start_date).count
