@@ -1,11 +1,16 @@
 <div align="right"><%= link_to 'Results', results_path %> | <%= link_to 'Logout', logout_path %></div>
 <script type="text/javascript">
 	$(function() {
-		$("#datepicker").datepicker();
+		$('#date').datepicker({dateFormat: "yy-mm-dd"});
 	});
 	</script>
+
 <div class="demo" align="right">
-<p>Date: <input id="datepicker" type="text"></p>
+  <% form_tag(failures_path, :method => "get") do %>  
+    <%= label_tag(:date, "Search for:") %>  
+    <%= text_field_tag(:date) %>  
+    <%= submit_tag("Search") %> 
+  <% end %>   
 </div>
 
 
