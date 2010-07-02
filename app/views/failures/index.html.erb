@@ -1,38 +1,107 @@
 <div align="right"><%= link_to 'Results', results_path %> | <%= link_to 'Logout', logout_path %></div>
 <h1>Failures</h1>
-<small><%= @activities_feature %> activities.feature</small><br/>
-
-<small><%= @issue_admin_feature %> issue_admin.feature</small><br/>
-<small><%= @issue_aging_feature %> issue_admin.feature</small><br/>
-<small><%= @issue_bulk_delete_feature %> issue_bulk_delete.feature</small><br/>
-<small><%= @issue_bulk_delete_by_creator_feature %> issue_bulk_delete_by_creator.feature</small><br/>
-<small><%= @issue_custom_fields_feature %> issue_custom_fields.feature</small><br/>
-<small><%= @issue_dashboard_feature %> issue_dashboard.feature</small><br/>
-<small><%= @issue_email_feature %> issue_email.feature</small><br/>
-<small><%= @issue_import_feature %> issue_import.feature</small><br/>
-<small><%= @issue_line_item_searchability_feature %> issue_line_item_searchability.feature</small><br/>
-<small><%= @issue_o_and_m_import_feature %> issue_o_and_m_import.feature</small><br/>
-<small><%= @issue_override_email_feature %> issue_override_email.feature</small><br/>
-<small><%= @issue_save_search_feature %> issue_save_search.feature</small><br/>
-<small><%= @issue_search_feature %> issue_search.feature</small><br/>
-<small><%= @issue_search_on_failed_emails_feature %> issue_search_on_failed_emails.feature</small><br/>
-<small><%= @issue_simple_search_feature %> issue_simple_search.feature</small><br/>
-<small><%= @issue_sort_feature %> issue_sort.feature</small><br/>
-<small><%= @issue_type_security_feature %> issue_type_security.feature</small><br/>
-<small><%= @issues_feature %> issues.feature</small><br/>
-<small><%= @issues_and_file_uploads_feature %> issues_and_file_uploads.feature</small><br/>
-<small><%= @issues_bulk_change_status_feature %> issues_bulk_change_status.feature</small><br/>
-<small><%= @issues_bulk_emailing_feature %> issues_bulk_emailing.feature</small><br/>
-<small><%= @issues_delete_feature %> issues_delete.feature</small><br/>
-<small><%= @issues_manage_tab_feature %> issues_manage_tab.feature</small><br/>
-<small><%= @item_feature %> item.feature</small><br/>
-<small><%= @line_item_bulk_edits_feature %> line_item_bulk_edits.feature</small><br/>
-<small><%= @line_item_bulk_updates_random_feature %> line_item_bulk_updates_random.feature</small><br/>
-<small><%= @line_item_bulk_updates_to_closed_feature %> line_item_bulk_updates_to_closed.feature</small><br/>
-<small><%= @line_item_bulk_updates_to_pending_feature %> line_item_bulk_updates_to_pending.feature</small><br/>
-<small><%= @line_item_bulk_updates_to_resolved_feature %> line_item_bulk_updates_to_resolved.feature</small><br/>
-<small><%= @line_item_search_feature %> line_item_search.feature</small><br/>
-<small><%= @line_items_feature %> line_items.feature</small><br/>
+<table>
+  <tr>
+    <th>#</th>
+    <th>File</th>
+  </tr>
+  <tr>
+<td><small><%= @activities_feature %></td><td> activities.feature</small></td>    
+  </tr>
+<tr>
+<td><small><%= @issue_admin_feature %></td><td>issue_admin.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_aging_feature %></td><td>issue_admin.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_bulk_delete_feature %></td><td>issue_bulk_delete.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_bulk_delete_by_creator_feature %></td><td>issue_bulk_delete_by_creator.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_custom_fields_feature %></td><td>issue_custom_fields.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_dashboard_feature %></td><td>issue_dashboard.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_email_feature %></td><td>issue_email.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_import_feature %></td><td>issue_import.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_line_item_searchability_feature %></td><td>issue_line_item_searchability.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_o_and_m_import_feature %></td><td>issue_o_and_m_import.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_override_email_feature %></td><td>issue_override_email.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_save_search_feature %></td><td>issue_save_search.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_search_feature %></td><td>issue_search.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issue_search_on_failed_emails_feature %></td><td>issue_search_on_failed_emails.feature</small></td>
+</tr>
+<tr>
+<td><small><%= @issue_simple_search_feature %></td><td>issue_simple_search.feature</small></td>
+</tr>
+<tr>
+<td><small><%= @issue_sort_feature %></td><td>issue_sort.feature</small></td>
+</tr>
+<tr>
+<td><small><%= @issue_type_security_feature %></td><td>issue_type_security.feature</small></td>
+</tr>
+<tr>
+<td><small><%= @issues_feature %></td><td>issues.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issues_and_file_uploads_feature %></td><td>issues_and_file_uploads.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issues_bulk_change_status_feature %></td><td>issues_bulk_change_status.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issues_bulk_emailing_feature %></td><td>issues_bulk_emailing.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issues_delete_feature %></td><td>issues_delete.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @issues_manage_tab_feature %></td><td>issues_manage_tab.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @item_feature %></td><td>item.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @line_item_bulk_edits_feature %></td><td>line_item_bulk_edits.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @line_item_bulk_updates_random_feature %></td><td>line_item_bulk_updates_random.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @line_item_bulk_updates_to_closed_feature %></td><td>line_item_bulk_updates_to_closed.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @line_item_bulk_updates_to_pending_feature %></td><td>line_item_bulk_updates_to_pending.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @line_item_bulk_updates_to_resolved_feature %></td><td>line_item_bulk_updates_to_resolved.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @line_item_search_feature %></td><td>line_item_search.feature</small></td>  
+</tr>
+<tr>
+<td><small><%= @line_items_feature %></td><td>line_items.feature</small></td>
+</tr>
+<table>
 
 
 
