@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
+  map.failures 'failures', :controller => 'failures', :action => 'index'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
