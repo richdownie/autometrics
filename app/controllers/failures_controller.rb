@@ -2,7 +2,6 @@ class FailuresController < ApplicationController
 before_filter :authorize, :only => [:index]
   def index
     @activities_feature = Result.activities_feature.count
-  
     @issue_admin_feature = Result.issue_admin_feature.count
     @issue_aging_feature = Result.issue_aging_feature.count
     @issue_bulk_delete_feature = Result.issue_bulk_delete_feature.count

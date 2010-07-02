@@ -1,6 +1,15 @@
 <div align="right"><%= link_to 'Results', results_path %> | <%= link_to 'Logout', logout_path %></div>
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker();
+	});
+	</script>
+<div class="demo" align="right">
+<p>Date: <input id="datepicker" type="text"></p>
+</div>
 
-<>
+
+
 <h1>Failures</h1>
 <table>
   <tr>
