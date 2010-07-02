@@ -33,6 +33,6 @@ class Result < ActiveRecord::Base
   named_scope :line_item_bulk_updates_to_resolved_feature, :conditions => ['title LIKE ?', '%line_item_bulk_updates_to_resolved.feature%']
   named_scope :line_item_search_feature, :conditions => ['title LIKE ?', '%line_item_search.feature%']
   named_scope :line_items_feature, :conditions => ['title LIKE ?', '%line_items.feature%']
-  named_scope :since, lambda { |date| { :conditions => ["DATE(created_at) >= ?", date.to_s] }}
+  named_scope :since, lambda { |date| { :conditions => "DATE(created_at) >= '#{date.to_s}'" }}
   
 end
