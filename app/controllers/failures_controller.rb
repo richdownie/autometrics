@@ -1,4 +1,5 @@
 class FailuresController < ApplicationController
+before_filter :authorize, :only => [:index]
   def index
     @activities_feature = Result.activities_feature.count
   
