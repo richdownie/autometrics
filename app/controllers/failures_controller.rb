@@ -1,9 +1,7 @@
 class FailuresController < ApplicationController
   def index
-    @item_feature = Result.item_feature.count
     @activities_feature = Result.activities_feature.count
-    
-    
+  
     @issue_admin_feature = Result.issue_admin_feature.count
     @issue_aging_feature = Result.issue_aging_feature.count
     @issue_bulk_delete_feature = Result.issue_bulk_delete_feature.count
@@ -20,6 +18,15 @@ class FailuresController < ApplicationController
     @issue_search_on_failed_emails_feature = Result.issue_search_on_failed_emails_feature.count
     @issue_simple_search_feature = Result.issue_simple_search_feature.count
     @issue_sort_feature = Result.issue_sort_feature.count
+    @issue_type_security_feature = Result.issue_type_security_feature.count
+    @issues_feature = Result.issues_feature.count
+    @issues_and_file_uploads_feature = Result.issues_and_file_uploads_feature.count
+    @issues_bulk_change_status_feature = Result.issues_bulk_change_status_feature.count
+    @issues_bulk_emailing_feature = Result.issues_bulk_emailing_feature.count
+    @issues_delete_feature = Result.issues_delete_feature.count
+    @issues_manage_tab_feature = Result.issues_manage_tab_feature.count
+    @item_feature = Result.item_feature.count
+    @line_item_bulk_edits_feature = Result.line_item_bulk_edits_feature.count
     
   end
 

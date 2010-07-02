@@ -1,9 +1,6 @@
 class Result < ActiveRecord::Base
   
-  named_scope :item_feature, :conditions => ['title LIKE ?', '%item.feature%']
   named_scope :activities_feature, :conditions => ['title LIKE ?', '%activities.feature%']
-  
-  
   
   named_scope :issue_admin_feature, :conditions => ['title LIKE ?', '%issue_admin.feature%']
   named_scope :issue_aging_feature, :conditions => ['title LIKE ?', '%issue_aging.feature%']
@@ -21,5 +18,14 @@ class Result < ActiveRecord::Base
   named_scope :issue_search_on_failed_emails_feature, :conditions => ['title LIKE ?', '%issue_search_on_failed_emails.feature%']
   named_scope :issue_simple_search_feature, :conditions => ['title LIKE ?', '%issue_simple_search.feature%']
   named_scope :issue_sort_feature, :conditions => ['title LIKE ?', '%issue_sort.feature%']
+  named_scope :issue_type_security_feature, :conditions => ['title LIKE ?', '%issue_type_security.feature%']
+  named_scope :issues_feature, :conditions => ['title LIKE ?', '%issues.feature%']
+  named_scope :issues_and_file_uploads_feature, :conditions => ['title LIKE ?', '%issues_and_file_uploads.feature%']
+  named_scope :issues_bulk_change_status_feature, :conditions => ['title LIKE ?', '%issues_bulk_change_status.feature%']
+  named_scope :issues_bulk_emailing_feature, :conditions => ['title LIKE ?', '%issues_bulk_emailing.feature%']
+  named_scope :issues_delete_feature, :conditions => ['title LIKE ?', '%issues_delete.feature%']
+  named_scope :issues_manage_tab_feature, :conditions => ['title LIKE ?', '%issues_manage_tab.feature%']
+  named_scope :item_feature, :conditions => ['title LIKE ?', '%item.feature%']
+  named_scope :line_item_bulk_edits_feature, :conditions => ['title LIKE ?', '%line_item_bulk_edits.feature%']
   
 end
