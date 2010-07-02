@@ -15,10 +15,12 @@ class FailuresController < ApplicationController
     @issue_line_item_searchability_feature = Result.issue_line_item_searchability_feature.count
     @issue_o_and_m_import_feature = Result.issue_o_and_m_import_feature.count
     @issue_override_email_feature = Result.issue_override_email_feature.count
-    
-    
-    
+    @issue_save_search_feature = Result.issue_save_search_feature.count
     @issue_search_feature = Result.issue_search_feature.count
+    @issue_search_on_failed_email_feature = Result.issue_search_on_failed_email_feature.count
+    @issue_simple_search_feature = Result.issue_simple_search_feature.count
+    @issue_sort_feature = Result.issue_sort_feature.count
+    
   end
 
 end

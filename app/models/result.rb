@@ -16,7 +16,10 @@ class Result < ActiveRecord::Base
   named_scope :issue_line_item_searchability_feature, :conditions => ['title LIKE ?', '%issue_line_item_searchability.feature%']
   named_scope :issue_o_and_m_import_feature, :conditions => ['title LIKE ?', '%issue_o_and_m_import.feature%']
   named_scope :issue_override_email_feature, :conditions => ['title LIKE ?', '%issue_override_email.feature%']
-  
-  
+  named_scope :issue_save_search_feature, :conditions => ['title LIKE ?', '%issue_save_search.feature%']
   named_scope :issue_search_feature, :conditions => ['title LIKE ?', '%issue_search.feature%']
+  named_scope :issue_search_on_failed_emails_feature, :conditions => ['title LIKE ?', '%issue_search_on_failed_emails.feature%']
+  named_scope :issue_simple_search_feature, :conditions => ['title LIKE ?', '%issue_simple_search.feature%']
+  named_scope :issue_sort_feature, :conditions => ['title LIKE ?', '%issue_sort.feature%']
+  
 end
