@@ -12,6 +12,9 @@ class FailuresController < ApplicationController
     @issue_dashboard_feature = Result.issue_dashboard_feature.count
     @issue_email_feature = Result.issue_email_feature.count
     @issue_import_feature = Result.issue_import_feature.count
+    @issue_line_item_searchability_feature = Result.issue_line_item_searchability_feature.count
+    @issue_o_and_m_import_feature = Result.issue_o_and_m_import_feature.count
+    @issue_override_email_feature = Result.issue_override_email_feature.count
     
     
     
