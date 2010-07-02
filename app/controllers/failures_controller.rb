@@ -27,6 +27,12 @@ class FailuresController < ApplicationController
     @issues_manage_tab_feature = Result.issues_manage_tab_feature.count
     @item_feature = Result.item_feature.count
     @line_item_bulk_edits_feature = Result.line_item_bulk_edits_feature.count
+    @line_item_bulk_updates_random_feature = Result.line_item_bulk_updates_random_feature.count
+    @line_item_bulk_updates_to_closed_feature = Result.line_item_bulk_updates_to_closed_feature.count
+    @line_item_bulk_updates_to_pending_feature = Result.line_item_bulk_updates_to_pending_feature.count
+    @line_item_bulk_updates_to_resolved_feature = Result.line_item_bulk_updates_to_resolved_feature.count
+    @line_item_search_feature = Result.line_item_search_feature.count
+    @line_items_feature = Result.line_items_feature.count
     
   end
 

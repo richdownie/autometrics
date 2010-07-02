@@ -27,5 +27,11 @@ class Result < ActiveRecord::Base
   named_scope :issues_manage_tab_feature, :conditions => ['title LIKE ?', '%issues_manage_tab.feature%']
   named_scope :item_feature, :conditions => ['title LIKE ?', '%item.feature%']
   named_scope :line_item_bulk_edits_feature, :conditions => ['title LIKE ?', '%line_item_bulk_edits.feature%']
+  named_scope :line_item_bulk_updates_random_feature, :conditions => ['title LIKE ?', '%line_item_bulk_updates_random.feature%']
+  named_scope :line_item_bulk_updates_to_closed_feature, :conditions => ['title LIKE ?', '%line_item_bulk_updates_to_closed.feature%']
+  named_scope :line_item_bulk_updates_to_pending_feature, :conditions => ['title LIKE ?', '%line_item_bulk_updates_to_pending.feature%']
+  named_scope :line_item_bulk_updates_to_resolved_feature, :conditions => ['title LIKE ?', '%line_item_bulk_updates_to_resolved.feature%']
+  named_scope :line_item_search_feature, :conditions => ['title LIKE ?', '%line_item_search.feature%']
+  named_scope :line_items_feature, :conditions => ['title LIKE ?', '%line_items.feature%']
   
 end
