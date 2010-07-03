@@ -13,110 +13,66 @@
   <% end %>   
 </div>
 
+<script type="text/javascript">
+
+  $(function() {
+      $("table.demo").bind('sort', function() {
+        $("tbody tr", this).not("td table *", this).each(function(i,item) {
+          var c = ["even","odd"];
+          $(this).removeClass(c[(i%2)+1]).addClass(c[i%2]);
+        });
+      }).makeSortable();
+  });
+
+</script>
 
 
 <h1>Failures</h1>
-<table>
-  <tr>
-    <th>#</th>
-    <th>File</th>
-  </tr>
-  <tr>
-<td><small><%= @activities_feature %></td><td> activities.feature</small></td>    
-  </tr>
-<tr>
-<td><small><%= @issue_admin_feature %></td><td>issue_admin.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_aging_feature %></td><td>issue_admin.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_bulk_delete_feature %></td><td>issue_bulk_delete.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_bulk_delete_by_creator_feature %></td><td>issue_bulk_delete_by_creator.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_custom_fields_feature %></td><td>issue_custom_fields.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_dashboard_feature %></td><td>issue_dashboard.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_email_feature %></td><td>issue_email.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_import_feature %></td><td>issue_import.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_line_item_searchability_feature %></td><td>issue_line_item_searchability.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_o_and_m_import_feature %></td><td>issue_o_and_m_import.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_override_email_feature %></td><td>issue_override_email.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_save_search_feature %></td><td>issue_save_search.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_search_feature %></td><td>issue_search.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issue_search_on_failed_emails_feature %></td><td>issue_search_on_failed_emails.feature</small></td>
-</tr>
-<tr>
-<td><small><%= @issue_simple_search_feature %></td><td>issue_simple_search.feature</small></td>
-</tr>
-<tr>
-<td><small><%= @issue_sort_feature %></td><td>issue_sort.feature</small></td>
-</tr>
-<tr>
-<td><small><%= @issue_type_security_feature %></td><td>issue_type_security.feature</small></td>
-</tr>
-<tr>
-<td><small><%= @issues_feature %></td><td>issues.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issues_and_file_uploads_feature %></td><td>issues_and_file_uploads.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issues_bulk_change_status_feature %></td><td>issues_bulk_change_status.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issues_bulk_emailing_feature %></td><td>issues_bulk_emailing.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issues_delete_feature %></td><td>issues_delete.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @issues_manage_tab_feature %></td><td>issues_manage_tab.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @item_feature %></td><td>item.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @line_item_bulk_edits_feature %></td><td>line_item_bulk_edits.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @line_item_bulk_updates_random_feature %></td><td>line_item_bulk_updates_random.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @line_item_bulk_updates_to_closed_feature %></td><td>line_item_bulk_updates_to_closed.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @line_item_bulk_updates_to_pending_feature %></td><td>line_item_bulk_updates_to_pending.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @line_item_bulk_updates_to_resolved_feature %></td><td>line_item_bulk_updates_to_resolved.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @line_item_search_feature %></td><td>line_item_search.feature</small></td>  
-</tr>
-<tr>
-<td><small><%= @line_items_feature %></td><td>line_items.feature</small></td>
-</tr>
+<table class="demo" cellspacing="0" cellpadding="0">
+  <colgroup>
+    <col/>
+    <col/>
+  </colgroup>
+  <thead>
+    <tr>
+      <th><div>CLick Me</div></th>
+      <th><div>File Name</div></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><small><%= @activities_feature %></td><td> activities.feature</small></td></tr>
+    <tr><td><small><%= @issue_admin_feature %></td><td>issue_admin.feature</small></td></tr>
+    <tr><td><small><%= @issue_aging_feature %></td><td>issue_admin.feature</small></td></tr>
+    <tr><td><small><%= @issue_bulk_delete_feature %></td><td>issue_bulk_delete.feature</small></td></tr>
+    <tr><td><small><%= @issue_bulk_delete_by_creator_feature %></td><td>issue_bulk_delete_by_creator.feature</small></td></tr>
+    <tr><td><small><%= @issue_custom_fields_feature %></td><td>issue_custom_fields.feature</small></td></tr>
+    <tr><td><small><%= @issue_dashboard_feature %></td><td>issue_dashboard.feature</small></td></tr>
+    <tr><td><small><%= @issue_email_feature %></td><td>issue_email.feature</small></td></tr>
+    <tr><td><small><%= @issue_import_feature %></td><td>issue_import.feature</small></td></tr>
+    <tr><td><small><%= @issue_line_item_searchability_feature %></td><td>issue_line_item_searchability.feature</small></td></tr>
+    <tr><td><small><%= @issue_o_and_m_import_feature %></td><td>issue_o_and_m_import.feature</small></td></tr>
+    <tr><td><small><%= @issue_override_email_feature %></td><td>issue_override_email.feature</small></td></tr>
+    <tr><td><small><%= @issue_save_search_feature %></td><td>issue_save_search.feature</small></td></tr>
+    <tr><td><small><%= @issue_search_feature %></td><td>issue_search.feature</small></td></tr>
+    <tr><td><small><%= @issue_search_on_failed_emails_feature %></td><td>issue_search_on_failed_emails.feature</small></td></tr>
+    <tr><td><small><%= @issue_simple_search_feature %></td><td>issue_simple_search.feature</small></td></tr>
+    <tr><td><small><%= @issue_sort_feature %></td><td>issue_sort.feature</small></td></tr>
+    <tr><td><small><%= @issue_type_security_feature %></td><td>issue_type_security.feature</small></td></tr>
+    <tr><td><small><%= @issues_feature %></td><td>issues.feature</small></td></tr>
+    <tr><td><small><%= @issues_and_file_uploads_feature %></td><td>issues_and_file_uploads.feature</small></td></tr>
+    <tr><td><small><%= @issues_bulk_change_status_feature %></td><td>issues_bulk_change_status.feature</small></td></tr>
+    <tr><td><small><%= @issues_bulk_emailing_feature %></td><td>issues_bulk_emailing.feature</small></td></tr>
+    <tr><td><small><%= @issues_delete_feature %></td><td>issues_delete.feature</small></td></tr>
+    <tr><td><small><%= @issues_manage_tab_feature %></td><td>issues_manage_tab.feature</small></td></tr>
+    <tr><td><small><%= @item_feature %></td><td>item.feature</small></td></tr>
+    <tr><td><small><%= @line_item_bulk_edits_feature %></td><td>line_item_bulk_edits.feature</small></td></tr>
+    <tr><td><small><%= @line_item_bulk_updates_random_feature %></td><td>line_item_bulk_updates_random.feature</small></td></tr>
+    <tr><td><small><%= @line_item_bulk_updates_to_closed_feature %></td><td>line_item_bulk_updates_to_closed.feature</small></td></tr>
+    <tr><td><small><%= @line_item_bulk_updates_to_pending_feature %></td><td>line_item_bulk_updates_to_pending.feature</small></td></tr>
+    <tr><td><small><%= @line_item_bulk_updates_to_resolved_feature %></td><td>line_item_bulk_updates_to_resolved.feature</small></td></tr>
+    <tr><td><small><%= @line_item_search_feature %></td><td>line_item_search.feature</small></td></tr>
+    <tr><td><small><%= @line_items_feature %></td><td>line_items.feature</small></td></tr>
+  </tbody>
 <table>
 
 
