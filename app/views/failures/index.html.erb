@@ -5,13 +5,15 @@
 	});
 	</script>
 
-<div class="demo" align="right">
+<div class="demo" align="center">
   <% form_tag(failures_path, :method => "get") do %>  
-    <%= label_tag(:date, "Filter on created_at:") %>  
+    <small><%= label_tag("default 7.days.ago") %></small><br/>
+    <%= label_tag(:date, "") %>
     <%= text_field_tag(:date) %>  
     <%= submit_tag("Search") %> 
   <% end %>   
 </div>
+<br/>
 
 <script type="text/javascript">
 
@@ -27,7 +29,7 @@
 </script>
 
 
-<small><p align="center">(click column heading to sort)</p></small>
+<!-- <small><p align="center">(click column heading to sort)</p></small> -->
 <table class="demo" cellspacing="0" cellpadding="0" align="center">
   <colgroup>
     <col/>
