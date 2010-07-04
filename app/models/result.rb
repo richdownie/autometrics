@@ -1,6 +1,10 @@
 class Result < ActiveRecord::Base
   
   named_scope :activities_feature, :conditions => ['title LIKE ?', '%activities.feature%']
+  named_scope :admin_feature, :conditions => ['title LIKE ?', '%admin.feature%']
+  named_scope :company_alerts_feature, :conditions => ['title LIKE ?', '%company_alerts.feature%']
+  named_scope :company_permissions_for_custom_fields_feature, :conditions => ['title LIKE ?', '%company_permissions_for_custom_fields.feature%']
+  named_scope :company_registration_permissions_feature, :conditions => ['title LIKE ?', '%company_registration_permissions.feature%']
   
   named_scope :issue_admin_feature, :conditions => ['title LIKE ?', '%issue_admin.feature%']
   named_scope :issue_aging_feature, :conditions => ['title LIKE ?', '%issue_aging.feature%']

@@ -4,6 +4,12 @@ before_filter :authorize, :only => [:index]
     start_date = params[:date].blank? ? 1.week.ago : params[:date]
     
     @activities_feature = Result.activities_feature.since(start_date).count
+    @admin_feature = Result.admin_feature.since(start_date).count
+    @company_alerts_feature = Result.company_alerts_feature.since(start_date).count
+    @company_permissions_for_custom_fields_feature = Result.company_permissions_for_custom_fields_feature.since(start_date).count
+    @company_registration_permissions_feature = Result.company_registration_permissions_feature.since(start_date).count
+    
+    
     @issue_admin_feature = Result.issue_admin_feature.since(start_date).count
     @issue_aging_feature = Result.issue_aging_feature.since(start_date).count
     @issue_bulk_delete_feature = Result.issue_bulk_delete_feature.since(start_date).count
