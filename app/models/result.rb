@@ -5,7 +5,12 @@ class Result < ActiveRecord::Base
   named_scope :company_alerts_feature, :conditions => ['title LIKE ?', '%company_alerts.feature%']
   named_scope :company_permissions_for_custom_fields_feature, :conditions => ['title LIKE ?', '%company_permissions_for_custom_fields.feature%']
   named_scope :company_registration_permissions_feature, :conditions => ['title LIKE ?', '%company_registration_permissions.feature%']
-  
+  named_scope :contact_alerts_feature, :conditions => ['title LIKE ?', '%contact_alerts.feature%']
+  named_scope :contact_permissions_for_custom_fields_feature, :conditions => ['title LIKE ?', '%contact_permissions_for_custom_fields.feature%']
+  named_scope :company_registration_permissions_feature, :conditions => ['title LIKE ?', '%company_registration_permissions.feature%']
+  named_scope :custom_fields_feature, :conditions => ['title LIKE ?', '%custom_fields.feature%']
+  named_scope :dashboard_feature, :conditions => ['title LIKE ?', '%dashboard.feature%']
+  named_scope :imports_feature, :conditions => ['title LIKE ?', '%imports.feature%']
   named_scope :issue_admin_feature, :conditions => ['title LIKE ?', '%issue_admin.feature%']
   named_scope :issue_aging_feature, :conditions => ['title LIKE ?', '%issue_aging.feature%']
   named_scope :issue_bulk_delete_feature, :conditions => ['title LIKE ?', '%issue_bulk_delete.feature%']

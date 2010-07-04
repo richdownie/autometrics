@@ -8,8 +8,12 @@ before_filter :authorize, :only => [:index]
     @company_alerts_feature = Result.company_alerts_feature.since(start_date).count
     @company_permissions_for_custom_fields_feature = Result.company_permissions_for_custom_fields_feature.since(start_date).count
     @company_registration_permissions_feature = Result.company_registration_permissions_feature.since(start_date).count
-    
-    
+    @contact_alerts_feature = Result.contact_alerts_feature.since(start_date).count
+    @company_registration_permissions_feature = Result.company_registration_permissions_feature.since(start_date).count
+    @contact_permissions_for_custom_fields_feature = Result.contact_permissions_for_custom_fields_feature.since(start_date).count
+    @custom_fields_feature = Result.custom_fields_feature.since(start_date).count
+    @dashboard_feature = Result.dashboard_feature.since(start_date).count
+    @imports_feature = Result.imports_feature.since(start_date).count
     @issue_admin_feature = Result.issue_admin_feature.since(start_date).count
     @issue_aging_feature = Result.issue_aging_feature.since(start_date).count
     @issue_bulk_delete_feature = Result.issue_bulk_delete_feature.since(start_date).count
