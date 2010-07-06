@@ -42,6 +42,19 @@ class Result < ActiveRecord::Base
   named_scope :line_item_bulk_updates_to_resolved_feature, :conditions => ['title LIKE ?', '%line_item_bulk_updates_to_resolved.feature%']
   named_scope :line_item_search_feature, :conditions => ['title LIKE ?', '%line_item_search.feature%']
   named_scope :line_items_feature, :conditions => ['title LIKE ?', '%line_items.feature%']
+  named_scope :login_feature, :conditions => ['title LIKE ?', '%login.feature%']
+  named_scope :projects_feature, :conditions => ['title LIKE ?', '%projects.feature%']
+  named_scope :registration_permissions_feature, :conditions => ['title LIKE ?', '%registration_permissions.feature%']
+  named_scope :security_issue_type_feature, :conditions => ['title LIKE ?', '%security_issue_type.feature%']
+  named_scope :single_sign_on_feature, :conditions => ['title LIKE ?', '%single_sign_on.feature%']
+  named_scope :stable_profile_links_feature, :conditions => ['title LIKE ?', '%stable_profile_links.feature%']
+  named_scope :workspace_feature, :conditions => ['title LIKE ?', '%workspace.feature%']
+  named_scope :ws_conversations_feature, :conditions => ['title LIKE ?', '%ws_conversations.feature%']
+  named_scope :ws_crud_feature, :conditions => ['title LIKE ?', '%ws_crud.feature%']
+  named_scope :ws_events_feature, :conditions => ['title LIKE ?', '%ws_events.feature%']
+  named_scope :ws_files_and_folders_feature, :conditions => ['title LIKE ?', '%ws_files_and_folders.feature%']
+  named_scope :ws_members_feature, :conditions => ['title LIKE ?', '%ws_members.feature%']
+  named_scope :ws_settings_feature, :conditions => ['title LIKE ?', '%ws_settings.feature%']
   named_scope :since, lambda { |date| { :conditions => "DATE(created_at) >= '#{date.to_s}'" }}
   
 end

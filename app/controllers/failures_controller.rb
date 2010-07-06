@@ -45,6 +45,19 @@ before_filter :authorize, :only => [:index]
     @line_item_bulk_updates_to_resolved_feature = Result.line_item_bulk_updates_to_resolved_feature.since(start_date).count
     @line_item_search_feature = Result.line_item_search_feature.since(start_date).count
     @line_items_feature = Result.line_items_feature.since(start_date).count
+    @login_feature = Result.login_feature.since(start_date).count
+    @projects_feature = Result.projects_feature.since(start_date).count
+    @registration_permission_feature = Result.registration_permissions_feature.since(start_date).count
+    @security_issue_type_feature = Result.security_issue_type_feature.since(start_date).count
+    @single_sign_on_feature = Result.single_sign_on_feature.since(start_date).count
+    @stable_profile_links_feature = Result.stable_profile_links_feature.since(start_date).count
+    @workspace_feature = Result.workspace_feature.since(start_date).count
+    @ws_conversations_feature = Result.ws_conversations_feature.since(start_date).count
+    @ws_crud_feature = Result.ws_crud_feature.since(start_date).count
+    @ws_events_feature = Result.ws_events_feature.since(start_date).count
+    @ws_files_and_folders_feature = Result.ws_files_and_folders_feature.since(start_date).count
+    @ws_members_feature = Result.ws_members_feature.since(start_date).count
+    @ws_settings_feature = Result.ws_settings_feature.since(start_date).count
     
   end
 
