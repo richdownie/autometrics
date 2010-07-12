@@ -1,5 +1,6 @@
 class FailuresController < ApplicationController
 # before_filter :authorize, :only => [:index]
+
   def index
     start_date = params[:date].blank? ? 1.week.ago : params[:date]
     

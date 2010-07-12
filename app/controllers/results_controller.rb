@@ -1,6 +1,5 @@
 class ResultsController < ApplicationController
   # before_filter :authorize, :only => [:index]
-  
   def index
     @results = Result.paginate :page => params[:page], :order => 'created_at DESC', :conditions => ["created_at >= ?", 1.days.ago]
     
