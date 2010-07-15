@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  # before_filter :fail_unless_in_development_mode
+  
   def index
     @results = Result.find(:all, :order => 'created_at DESC')
     
