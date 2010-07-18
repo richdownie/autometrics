@@ -24,6 +24,7 @@ before_filter :authorize, :only => [:index]
     @issue_email_feature = Result.issue_email_feature.since(start_date).count
     @issue_import_feature = Result.issue_import_feature.since(start_date).count
     @issue_line_item_searchability_feature = Result.issue_line_item_searchability_feature.since(start_date).count
+    @issue_new_feature = Result.issue_new_feature.since(start_date).count
     @issue_o_and_m_import_feature = Result.issue_o_and_m_import_feature.since(start_date).count
     @issue_override_email_feature = Result.issue_override_email_feature.since(start_date).count
     @issue_save_search_feature = Result.issue_save_search_feature.since(start_date).count
