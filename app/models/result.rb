@@ -58,4 +58,5 @@ class Result < ActiveRecord::Base
   named_scope :ws_settings_feature, :conditions => ['title LIKE ?', '%ws_settings.feature%']
   named_scope :since, lambda { |date| { :conditions => "DATE(created_at) >= '#{date.to_s}'" }}
   
+
 end

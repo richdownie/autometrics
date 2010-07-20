@@ -4,6 +4,36 @@
 		$('#date').datepicker({dateFormat: "yy-mm-dd"});
 	});
 	</script>
+	
+  <script type="text/javascript">
+  	$(function() {
+  	  new Highcharts.Chart({
+  	    chart: {
+  	      renderTo: "failures_chart"
+  	    },
+  	    title: {
+  	      text: "Total Failures"
+  	    },
+  	    xAxis: {
+  	      type: "datetime"
+  	    },
+  	    yAxis: {
+  	      title: {
+  	        text: "Failures"
+  	      }
+  	    },
+  	    
+  	    series: [{
+  	      pointInterval: <%= 1.day * 1000 %>,
+  	      pointStart: <%= 3.months.ago.to_i * 1000 %>,
+  	      data: [ 1, 3, 5, 3, 7, 2]
+  	      
+  	    }]
+  	  });
+  	});
+  	</script>
+  	
+<div id="failures_chart" sytle="width:360px; height:100px;"></div>
 
 <div class="demo" align="center">
   <% form_tag(failures_path, :method => "get") do %>  
