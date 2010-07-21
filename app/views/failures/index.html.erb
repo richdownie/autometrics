@@ -16,6 +16,10 @@
   	      text: "Metrics"
   	    },
   	    
+  	    subtitle: {
+  	      text: "Drive both graph and columns by above Search Date"
+	      },
+  	    
   	    tooltip: {
   	      enabled: false
   	    },
@@ -42,15 +46,18 @@
   	});
   	</script>
   	
+    <div class="demo" align="center">
+      <% form_tag(failures_path, :method => "get") do %>  
+        <%= label_tag(:date, "") %>
+        <%= text_field_tag(:date) %>  
+        <%= submit_tag("Search") %> 
+      <% end %>   
+    </div>
+<br/>
+<br/>    
 <div id="failures_chart" sytle="width:360px; height:100px;"></div>
 
-<div class="demo" align="center">
-  <% form_tag(failures_path, :method => "get") do %>  
-    <%= label_tag(:date, "") %>
-    <%= text_field_tag(:date) %>  
-    <%= submit_tag("Search") %> 
-  <% end %>   
-</div>
+
 <br/>
 
 <script type="text/javascript">
