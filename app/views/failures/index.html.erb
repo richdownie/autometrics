@@ -41,7 +41,7 @@
 
 <div class="demo" align="center">
   <% form_tag(failures_path, :method => "get") do %>  
-    <small><%= label_tag("default 7.days.ago") %></small><br/>
+    <small><%= label_tag("Since Yesterday") %></small><br/>
     <%= label_tag(:date, "") %>
     <%= text_field_tag(:date) %>  
     <%= submit_tag("Search") %> 
