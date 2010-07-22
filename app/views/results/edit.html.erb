@@ -1,12 +1,15 @@
-<h1>Editing Result</h1>
-
 <% form_for(@result) do |f| %>
   <%= f.error_messages %>
-
-  <p align="center">
+<div align="center">
+  <p>
     <b>FALSE POSITIVE?</b><br />
     <%= f.check_box :check %>
   </p>
+  <ol>
+    <li>Maybe the same scenario failed 5 times today</li>
+    <li>You ran it a couple of times and maybe even tested manually</li>
+  </ol>  
+</div>
   <p>
     <%= f.label :created_at %><br />
     <%= f.text_field :created_at, :disabled => 'disabled' %>
@@ -22,6 +25,6 @@
   <p>
     <%= f.submit 'Update' %>
   </p>
-<% end %>
+<% end %>  
 
 <%= link_to 'Back', results_path %>
