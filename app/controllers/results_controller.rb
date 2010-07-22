@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
   before_filter :authorize, :only => [:index]
   def index
-    @results = Result.not_false_positives.find(:all, :order => 'created_at DESC', :conditions => ["created_at >= ?", 1.days.ago])
+    @results = Result.not_false_positives.find(:all, :order => 'created_at DESC', :conditions => ["created_at >= ?", 2.weeks.ago])
     
     respond_to do |format|
       format.html # index.html.erb
