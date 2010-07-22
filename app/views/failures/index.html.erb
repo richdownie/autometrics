@@ -48,7 +48,7 @@
   	  });
   	});
   	</script>
-  	<div align="center"><h1><%= @last_date_picked %></h1></div>
+  	<div align="center"><h1><%= @last_date_picked.to_date %></h1></div>
     <div class="demo" align="center">
       <% form_tag(failures_path, :method => "get") do %>  
         <%= label_tag(:date, "") %>
