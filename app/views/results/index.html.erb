@@ -7,17 +7,17 @@
     <br/><br/>
 <table>
   <tr>
-    <th>False Positive</th>
+    <th></th>
     <th>When?</th>
     <th>File</th>
     <th>Comment</th>
   </tr>
 <% @results.each do |result| %>
   <tr class="<%= cycle("even", "odd") -%>">
-    <td><i><%=h (result.check) %></i></td>
-  <td><%=h result.created_at.strftime("%A " + "at %I:%M%p") %> **** </td>
-      <td><i><%=h truncate(result.title, :length => 100) %></i></td>
-      <td><i><%=h (result.comment) %></i></td>
+    <td><%= link_to 'Edit', edit_result_path(result) %>
+    <td><%=h result.created_at.strftime("%A " + "at %I:%M%p") %> **** </td>
+    <td><i><%=h truncate(result.title, :length => 100) %></i></td>
+    <td><i><%=h (result.comment) %></i></td>
   </tr>
 <% end %>
 </table>
