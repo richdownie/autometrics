@@ -5,7 +5,7 @@ before_filter :authorize, :only => [:index]
     start_date = params[:date].blank? ? 0.days.ago : params[:date]
     @last_date_picked = start_date
     
-    @total_failures = Result.since(start_date).count
+    @total_failures = Result.not_false_positives.since(start_date).count
     @activities_feature = Result.activities_feature.since(start_date).count
     @admin_feature = Result.admin_feature.since(start_date).count
     @company_alerts_feature = Result.company_alerts_feature.since(start_date).count
