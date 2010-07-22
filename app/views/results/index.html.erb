@@ -13,8 +13,8 @@
 <% @results.each do |result| %>
   <tr class="<%= cycle("even", "odd") -%>">
     <small><td><i><%= link_to(result.created_at.strftime("%A " + "at %I:%M%p"), edit_result_path(result)) %> ** </i></td>
-    <td><i><%=h truncate(result.title, :length => 80) %></i></td>
-    <td><i><%=h (result.comment, :length => 30) %></i></td></small>
+    <td><i><%=h truncate(result.title, :length => 90) %></i></td>
+    <td><i><%=h truncate(result.comment, :length => 30) %></i></td></small>
   </tr>
 <% end %>
 </table>
