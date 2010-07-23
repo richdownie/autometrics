@@ -14,7 +14,6 @@ before_filter :authorize, :only => [:index]
     @contact_alerts_feature = Result.not_false_positives.contact_alerts_feature.since(start_date).count
     @company_registration_permissions_feature = Result.not_false_positives.company_registration_permissions_feature.since(start_date).count
     @contact_permissions_for_custom_fields_feature = Result.not_false_positives.contact_permissions_for_custom_fields_feature.since(start_date).count
-    @custom_fields_feature = Result.not_false_positives.custom_fields_feature.since(start_date).count
     @dashboard_feature = Result.not_false_positives.dashboard_feature.since(start_date).count
     @imports_feature = Result.not_false_positives.imports_feature.since(start_date).count
     @issue_admin_feature = Result.not_false_positives.issue_admin_feature.since(start_date).count
