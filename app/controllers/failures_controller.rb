@@ -9,6 +9,7 @@ before_filter :authorize, :only => [:index]
     @activities_feature = Result.not_false_positives.activities_feature.since(start_date).count
     @admin_feature = Result.not_false_positives.admin_feature.since(start_date).count
     @company_alerts_feature = Result.not_false_positives.company_alerts_feature.since(start_date).count
+    @company_address_feature = Result.not_false_positives.company_address_feature.since(start_date).count
     @company_permissions_for_custom_fields_feature = Result.not_false_positives.company_permissions_for_custom_fields_feature.since(start_date).count
     @company_registration_permissions_feature = Result.not_false_positives.company_registration_permissions_feature.since(start_date).count
     @contact_alerts_feature = Result.not_false_positives.contact_alerts_feature.since(start_date).count
