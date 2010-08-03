@@ -20,7 +20,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.update_attributes(params[:result])
-        flash[:notice] = 'Timing was successfully updated.'
+        flash[:notice] = 'Result was successfully updated.'
         format.html { redirect_to(results_path) }
         format.xml  { head :ok }
       else
