@@ -2,7 +2,7 @@ class FailuresController < ApplicationController
 before_filter :authorize, :only => [:index]
 
   def index
-    start_date = params[:date].blank? ? 0.days.ago : params[:date]
+    start_date = params[:date].blank? ? 1.week.ago : params[:date]
     @last_date_picked = start_date
     
     @total_failures = Result.not_false_positives.since(start_date).count
