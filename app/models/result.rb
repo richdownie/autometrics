@@ -55,6 +55,7 @@ class Result < ActiveRecord::Base
   named_scope :ws_events_feature, :conditions => ['title LIKE ?', '%ws_events.feature%']
   named_scope :ws_files_and_folders_feature, :conditions => ['title LIKE ?', '%ws_files_and_folders.feature%']
   named_scope :ws_members_feature, :conditions => ['title LIKE ?', '%ws_members.feature%']
+  named_scope :ws_polls_feature, :conditions => ['title LIKE ?', '%ws_polls.feature%']
   named_scope :ws_settings_feature, :conditions => ['title LIKE ?', '%ws_settings.feature%']
   named_scope :since, lambda { |date| { :conditions => "DATE(created_at) >= '#{date.to_s}'" }}
   

@@ -61,6 +61,7 @@ before_filter :authorize, :only => [:index]
     @ws_events_feature = Result.not_false_positives.ws_events_feature.since(start_date).count
     @ws_files_and_folders_feature = Result.not_false_positives.ws_files_and_folders_feature.since(start_date).count
     @ws_members_feature = Result.not_false_positives.ws_members_feature.since(start_date).count
+    @ws_polls_feature = Result.not_false_positives.ws_polls_feature.since(start_date).count
     @ws_settings_feature = Result.not_false_positives.ws_settings_feature.since(start_date).count
     
   end
