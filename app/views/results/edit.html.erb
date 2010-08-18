@@ -1,15 +1,5 @@
 <% form_for(@result) do |f| %>
   <%= f.error_messages %>
-<div align="center">
-  <p>
-    <b>FALSE POSITIVE?</b><br />
-    <%= f.check_box :check %>
-  </p>
-  <ol>
-    <li>Maybe the same scenario failed 5 times today</li>
-    <li>You ran it a couple of times and maybe even tested manually</li>
-  </ol>  
-</div>
   <p>
     <%= f.label :created_at %><br />
     <%= f.text_field :created_at, :disabled => 'disabled' %>
@@ -22,6 +12,10 @@
     <%= f.label :comment %><br />
     <%= f.text_area :comment, :size => "50x5" %>
   </p>
+    <p>
+      <b>FALSE POSITIVE?</b><br />
+      <%= f.check_box :check %>
+    </p>
   <p>
     <%= f.submit 'Update' %>
   </p>
