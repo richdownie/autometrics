@@ -52,6 +52,7 @@ before_filter :authorize, :only => [:index]
     @login_feature = Result.not_false_positives.login_feature.since(start_date).count
     @projects_feature = Result.not_false_positives.projects_feature.since(start_date).count
     @registration_permissions_feature = Result.not_false_positives.registration_permissions_feature.since(start_date).count
+    @saved_search_feature = Result.not_false_positives.saved_search_feature.since(start_date).count
     @security_issue_type_feature = Result.not_false_positives.security_issue_type_feature.since(start_date).count
     @single_sign_on_feature = Result.not_false_positives.single_sign_on_feature.since(start_date).count
     @stable_profile_links_feature = Result.not_false_positives.stable_profile_links_feature.since(start_date).count

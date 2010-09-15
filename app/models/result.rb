@@ -46,6 +46,7 @@ class Result < ActiveRecord::Base
   named_scope :login_feature, :conditions => ['title LIKE ?', '%login.feature%']
   named_scope :projects_feature, :conditions => ['title LIKE ?', '%projects.feature%']
   named_scope :registration_permissions_feature, :conditions => ['title LIKE ?', '%registration_permissions.feature%']
+  named_scope :saved_search_feature, :conditions => ['title LIKE ?', '%saved_search.feature']
   named_scope :security_issue_type_feature, :conditions => ['title LIKE ?', '%security_issue_type.feature%']
   named_scope :single_sign_on_feature, :conditions => ['title LIKE ?', '%single_sign_on.feature%']
   named_scope :stable_profile_links_feature, :conditions => ['title LIKE ?', '%stable_profile_links.feature%']
