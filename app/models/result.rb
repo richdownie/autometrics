@@ -44,6 +44,7 @@ class Result < ActiveRecord::Base
   named_scope :line_item_search_feature, :conditions => ['title LIKE ?', '%line_item_search.feature%']
   named_scope :line_items_feature, :conditions => ['title LIKE ?', '%line_items.feature%']
   named_scope :login_feature, :conditions => ['title LIKE ?', '%login.feature%']
+  named_scope :mass_file_upload_feature, :conditions => ['title LIKE ?', '%mass_file_upload.feature%']
   named_scope :projects_feature, :conditions => ['title LIKE ?', '%projects.feature%']
   named_scope :registration_permissions_feature, :conditions => ['title LIKE ?', '%registration_permissions.feature%']
   named_scope :saved_search_feature, :conditions => ['title LIKE ?', '%saved_search.feature']

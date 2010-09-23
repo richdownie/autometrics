@@ -50,6 +50,7 @@ before_filter :authorize, :only => [:index]
     @line_item_search_feature = Result.not_false_positives.line_item_search_feature.since(start_date).count
     @line_items_feature = Result.not_false_positives.line_items_feature.since(start_date).count
     @login_feature = Result.not_false_positives.login_feature.since(start_date).count
+    @mass_file_upload_feature = Result.not_false_positives.mass_file_upload_feature.since(start_date).count
     @projects_feature = Result.not_false_positives.projects_feature.since(start_date).count
     @registration_permissions_feature = Result.not_false_positives.registration_permissions_feature.since(start_date).count
     @saved_search_feature = Result.not_false_positives.saved_search_feature.since(start_date).count
