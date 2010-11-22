@@ -41,6 +41,7 @@ before_filter :authorize, :only => [:index]
     @issues_bulk_emailing_feature = Result.not_false_positives.issues_bulk_emailing_feature.since(start_date).count
     @issues_delete_feature = Result.not_false_positives.issues_delete_feature.since(start_date).count
     @issues_manage_tab_feature = Result.not_false_positives.issues_manage_tab_feature.since(start_date).count
+    @issues_null_email_templates_feature = Result.not_false_positives.issues_null_email_templates_feature.since(start_date).count
     @item_feature = Result.not_false_positives.item_feature.since(start_date).count
     @line_item_bulk_edits_feature = Result.not_false_positives.line_item_bulk_edits_feature.since(start_date).count
     @line_item_bulk_updates_random_feature = Result.not_false_positives.line_item_bulk_updates_random_feature.since(start_date).count
