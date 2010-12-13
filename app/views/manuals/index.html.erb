@@ -4,12 +4,12 @@
 <br/>
 <div class="manuals" id="fail">
   <table>
-    <th>Delete |</th>
-    <th align="left">Scenario (click text to edit)</th>
+    <th align="left" width="5%">Delete</th>
+    <th align="left" width="95%">Scenario (click text to edit)</th>
     <% @manuals_fail.each do |manual| %>
       <tr>
-      <td><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
-      <td><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="5%" align="left"><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
+      <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
@@ -17,12 +17,12 @@
 <hr>
 <div class="manuals" id="pass">
   <table>
-    <th>Delete |</th>
-    <th align="left">Scenario (click text to edit)</th>
+    <th align="left" width="5%">Delete</th>
+    <th align="left" width="95%">Scenario (click text to edit)</th>
     <% @manuals_pass.each do |manual| %>
       <tr>
-      <td><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
-      <td><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="5%" align="left"><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
+      <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
