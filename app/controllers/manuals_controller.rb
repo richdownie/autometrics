@@ -26,7 +26,7 @@ before_filter :authorize, :only => [:index]
         format.xml  { render :xml => @manual.errors, :status => :unprocessable_entity }
       end
     end
-end
+  end
       
       
       
