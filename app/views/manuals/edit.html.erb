@@ -1,0 +1,11 @@
+<h1>EDIT Manual Scenario</h1>
+<% form_for(@manual) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :scenario %><br />
+    <%= f.text_area :scenario %>
+  </p>  
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

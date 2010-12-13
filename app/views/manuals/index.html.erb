@@ -2,6 +2,6 @@
 <br/>
 <br/>
 <% @manuals.each do |manual| %>
-  <%= manual.scenario %>
+  <%= link_to(manual.scenario, edit_manual_path(manual)) %>
   <%= link_to 'X', manual, :confirm => 'Are you sure?', :method => :delete %><br/>
 <% end %>

@@ -9,6 +9,28 @@ before_filter :authorize, :only => [:index]
     @manual = Manual.new
   end
   
+  def edit
+    @manual = Manual.find(params[:id])
+  end
+  
+  def update
+    @manual = Manual.find(params[:id])
+
+    respond_to do |format|
+      if @manual.update_attributes(params[:manual])
+        flash[:notice] = 'Scenario was successfully updated.'
+        format.html { redirect_to(manuals_path) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @manual.errors, :status => :unprocessable_entity }
+      end
+    end
+end
+      
+      
+      
+      
   def create
     @manual = Manual.new(params[:manual])
     if @manual.save
