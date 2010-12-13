@@ -14,7 +14,7 @@
   </tr>
 <% @results.each do |result| %>
   <tr class="<%= cycle("even", "odd") -%>">
-    <td><%= link_to 'X', result, :method => :delete %></td>
+    <td><%= button_to("X", result, :method => :delete) %></td>
     <small><td><i><%= link_to(result.created_at.strftime("%A " + "at %I:%M%p"), edit_result_path(result)) %> ** </i></td>
     <td><b><%=h truncate(result.title, :length => 90) %></b></td>
     <td><i><%=h truncate(result.comment, :length => 30) %></i></td></small>

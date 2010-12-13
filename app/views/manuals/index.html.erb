@@ -3,12 +3,12 @@
 <br/>
 <div id="manuals">
   <table>
-    <th>Scenario</th>
     <th>Delete</th>
+    <th>Scenario</th>
     <% @manuals.each do |manual| %>
       <tr>
+      <td><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
       <td><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
-      <td><%= link_to 'X', manual, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>  
     <% end %>
   </table>
