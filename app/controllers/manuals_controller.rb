@@ -2,7 +2,7 @@ class ManualsController < ApplicationController
 before_filter :authorize, :only => [:index]
   
   def index
-    @manuals = Manual.all
+    @manuals = Manual.find(:all, :order => 'created_at DESC')
   end
   
   def new
