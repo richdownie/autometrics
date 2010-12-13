@@ -1,5 +1,5 @@
 <div class="header-nav" align="right"><%= link_to 'Automation Results', results_path %> | <%= link_to 'Metrics', failures_path %> | <%= link_to 'Logout', logout_path %></div>
-<p align="center"><%= link_to 'ADD SCENARIO', new_manual_path %></p>
+<p id="add-button" align="left"><%= link_to image_tag("/images/add.png", :border => 0, :title => "Add Scenario", :height => 30, :width => 30), new_manual_path %>
 <br/>
 <br/>
 <div class="manuals" id="fail">
@@ -8,7 +8,7 @@
     <th align="left" width="95%">Scenario (click text to edit)</th>
     <% @manuals_fail.each do |manual| %>
       <tr>
-      <td width="5%" align="left"><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
+      <b><td width="5%" align="left"><%= button_to("x", manual, :confirm => 'Are you sure?', :method => :delete) %></td></b>
       <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
@@ -21,7 +21,7 @@
     <th align="left" width="95%">Scenario (click text to edit)</th>
     <% @manuals_pass.each do |manual| %>
       <tr>
-      <td width="5%" align="left"><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
+      <b><td width="5%" align="left"><%= button_to("x", manual, :confirm => 'Are you sure?', :method => :delete) %></td></b>
       <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
