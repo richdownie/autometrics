@@ -2,7 +2,8 @@ class ManualsController < ApplicationController
 before_filter :authorize, :only => [:index]
   
   def index
-    @manuals = Manual.find(:all, :order => 'created_at DESC')
+    @manuals_fail = Manual.fail.find(:all, :order => 'created_at DESC')
+    @manuals_pass = Manual.pass.find(:all, :order => 'created_at DESC')
   end
   
   def new

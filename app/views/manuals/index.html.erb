@@ -1,12 +1,25 @@
 <div class="header-nav" align="right"><%= link_to 'Automation Results', results_path %> | <%= link_to 'Metrics', failures_path %> | <%= link_to 'Logout', logout_path %></div>
-<%= link_to 'ADD SCENARIO', new_manual_path %>
+<p align="center"><%= link_to 'ADD SCENARIO', new_manual_path %></p>
 <br/>
 <br/>
-<div id="manuals">
+<div class="manuals" id="fail">
   <table>
     <th>Delete |</th>
     <th align="left">Scenario (click text to edit)</th>
-    <% @manuals.each do |manual| %>
+    <% @manuals_fail.each do |manual| %>
+      <tr>
+      <td><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
+      <td><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      </tr>  
+    <% end %>
+  </table>
+</div>
+<hr>
+<div class="manuals" id="pass">
+  <table>
+    <th>Delete |</th>
+    <th align="left">Scenario (click text to edit)</th>
+    <% @manuals_pass.each do |manual| %>
       <tr>
       <td><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
       <td><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>

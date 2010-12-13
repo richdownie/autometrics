@@ -1,6 +1,6 @@
 class AddStatusToManual < ActiveRecord::Migration
   def self.up
-    add_column :manuals, :status, :boolean
+    add_column :manuals, :status, :boolean, :default => false, :nil => false
   end
 
   def self.down
