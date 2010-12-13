@@ -8,5 +8,6 @@ class CreateManuals < ActiveRecord::Migration
   end
 
   def self.down
+    drop_table :manuals
   end
 end

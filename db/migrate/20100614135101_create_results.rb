@@ -9,5 +9,6 @@ class CreateResults < ActiveRecord::Migration
 
   def self.down
     drop_table :results
+    drop_table :manuals
   end
 end
