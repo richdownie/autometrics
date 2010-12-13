@@ -1,4 +1,5 @@
 class ManualsController < ApplicationController
+before_filter :authorize, :only => [:index]
   
   def index
     @manuals = Manual.all
