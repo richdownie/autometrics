@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   # This route can be invoked with purchase_url(:id => product.id)
   map.results 'results', :controller => 'results'
   
+  map.reset_scenarios 'reset_scenarios', :controller => 'manuals', :action => 'reset_scenarios'
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   map.failures 'failures', :controller => 'failures', :action => 'index'

@@ -29,8 +29,10 @@ before_filter :authorize, :only => [:index]
     end
   end
       
-      
-      
+  def reset_scenarios
+    @manuals = Manual.green_scenarios.reset
+    redirect_to manuals_path
+  end
       
   def create
     @manual = Manual.new(params[:manual])
