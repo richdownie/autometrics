@@ -1,7 +1,6 @@
 <div class="header-nav" align="right"><%= link_to 'Automation Results', results_path %> | <%= link_to 'Metrics', failures_path %> | <%= link_to 'Logout', logout_path %></div>
-<p id="add-button" align="left"><%= link_to image_tag("/images/add.png", :border => 0, :title => "Add Scenario", :height => 30, :width => 30), new_manual_path %>
-<br/>
-<br/>
+<p id="add-button" align="left"><%= link_to image_tag("/images/add.png", :border => 0, :title => "Add Scenario", :height => 30, :width => 30), new_manual_path %></p>
+
 <div class="manuals" id="fail">
   <table>
     <th align="left" width="5%">Delete</th>
@@ -14,7 +13,7 @@
     <% end %>
   </table>
 </div>
-<hr>
+<p id="add-button" align="left"><%= link_to image_tag("/images/add.png", :border => 0, :title => "Add Scenario", :height => 30, :width => 30), new_manual_path %></p>
 <div class="manuals" id="pass">
   <table>
     <th align="left" width="5%">Delete</th>
@@ -27,3 +26,4 @@
     <% end %>
   </table>
 </div>
+<p id="add-button" align="left"><%= link_to image_tag("/images/add.png", :border => 0, :title => "Add Scenario", :height => 30, :width => 30), new_manual_path %></p>
