@@ -3,24 +3,24 @@
 <span id="reset-button"><%= link_to image_tag("/images/reset_scenarios.png", :border => 0, :title => "Reset ALL Scenarios", :height => 30, :width => 30), reset_scenarios_path, :confirm => 'This will reset all your current tests...sure about this?' %></span>
 <div class="manuals" id="fail">
   <table>
-    <th align="left" width="15%">  </th>
+    <th align="left" width="15%"></th>
     <th align="left" width="85%">Scenario (click text to edit)</th>
     <% @manuals_fail.each do |manual| %>
       <tr>
-      <td width="5%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
-      <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="15%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
+      <td width="85%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
 </div>
 <div class="manuals" id="pass">
   <table>
-    <th align="left" width="15%">  </th>
+    <th align="left" width="15%"></th>
     <th align="left" width="85%">Scenario (click text to edit)</th>
     <% @manuals_pass.each do |manual| %>
       <tr>
-      <td width="5%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
-      <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="15%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
+      <td width="85%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
