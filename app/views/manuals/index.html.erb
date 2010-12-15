@@ -7,23 +7,21 @@
     <th align="left" width="95%">Scenario (click text to edit)</th>
     <% @manuals_fail.each do |manual| %>
       <tr>
-      <b><td width="5%" align="left"><%= button_to("x", manual, :confirm => 'Are you sure?', :method => :delete) %></td></b>
+      <td width="5%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
       <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
 </div>
-<p id="add-button" align="left"><%= link_to image_tag("/images/add.png", :border => 0, :title => "Add Scenario", :height => 30, :width => 30), new_manual_path %></p>
 <div class="manuals" id="pass">
   <table>
     <th align="left" width="5%">Delete</th>
     <th align="left" width="95%">Scenario (click text to edit)</th>
     <% @manuals_pass.each do |manual| %>
       <tr>
-      <b><td width="5%" align="left"><%= button_to("x", manual, :confirm => 'Are you sure?', :method => :delete) %></td></b>
+      <td width="5%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
       <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
 </div>
-<p id="add-button" align="left"><%= link_to image_tag("/images/add.png", :border => 0, :title => "Add Scenario", :height => 30, :width => 30), new_manual_path %></p>
