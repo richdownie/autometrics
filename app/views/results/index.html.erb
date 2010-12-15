@@ -1,24 +1,24 @@
 <div class="header-nav" align="right"><%= link_to 'Manual Steps', manuals_path %> | <%= link_to 'Metrics', failures_path %> | <%= link_to 'Logout', logout_path %></div>
-  <h1>Automation Results</h1>
-  
-  <div id="results">
-    
-    <br/><br/>
-<table>
-  <tr>
-    <th>Delete</th>
-    <th>When?</th>
-    <th>File</th>
-    <th>Comment</th>
-  </tr>
-<% @results.each do |result| %>
-  <tr class="<%= cycle("even", "odd") -%>">
-    <td><%= button_to("X", result, :method => :delete) %></td>
-    <small><td><i><%= link_to(result.created_at.strftime("%A " + "at %I:%M%p"), edit_result_path(result)) %> ** </i></td>
-    <td><b><%=h truncate(result.title, :length => 90) %></b></td>
-    <td><i><%=h truncate(result.comment, :length => 30) %></i></td></small>
-  </tr>
-<% end %>
-</table>
-<br/><br/>
+
+<div id="results">
+  <br/>
+  <br/>
+  <table>
+    <tr>
+      <th>Delete</th>
+      <th>When?</th>
+      <th>File</th>
+      <th>Comment</th>
+    </tr>
+    <% @results.each do |result| %>
+      <tr class="<%= cycle("even", "odd") -%>">
+        <td><%= button_to("X", result, :method => :delete) %></td>
+        <small><td><i><%= link_to(result.created_at.strftime("%A " + "at %I:%M%p"), edit_result_path(result)) %> ** </i></td>
+        <td><b><%=h truncate(result.title, :length => 90) %></b></td>
+        <td><i><%=h truncate(result.comment, :length => 30) %></i></td></small>
+      </tr>
+    <% end %>
+  </table>
+  <br/>
+  <br/>
 </div>
