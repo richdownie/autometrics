@@ -4,11 +4,13 @@
 <div class="manuals" id="fail">
   <table>
     <th align="left" width="5%"></th>
-    <th align="left" width="95%">Scenario (click text to edit)</th>
+    <th align="left" width="20">Tag</th>
+    <th align="left" width="75%">Scenario (click text to edit)</th>
     <% @manuals_fail.each do |manual| %>
       <tr>
       <td width="5%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
-      <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="20"><%= manual.tag %></td>
+      <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
@@ -16,11 +18,13 @@
 <div class="manuals" id="pass">
   <table>
     <th align="left" width="5%"></th>
-    <th align="left" width="95%">Scenario (click text to edit)</th>
+    <th align="left" width="20">Tag</th>
+    <th align="left" width="75%">Scenario (click text to edit)</th>
     <% @manuals_pass.each do |manual| %>
       <tr>
       <td width="5%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
-      <td width="95%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="20"><%= manual.tag %></td>
+      <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>

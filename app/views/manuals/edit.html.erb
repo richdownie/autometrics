@@ -6,6 +6,10 @@
     <%= f.text_area :scenario, :size => "100x5"  %>
   </p>
   <p>
+    <%= f.label :tag %><br />
+    <%= f.select(:tag, Manual::TAGS, {:include_blank => 'None'}) %>
+  </p>
+  <p>
     <%= f.label :Pass? %>
     <%= f.check_box :status %>
   </p>
