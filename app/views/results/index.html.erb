@@ -5,14 +5,14 @@
   <br/>
   <table>
     <tr>
-      <th>Delete</th>
+      <th></th>
       <th>When?</th>
       <th>File</th>
       <th>Comment</th>
     </tr>
     <% @results.each do |result| %>
       <tr class="<%= cycle("even", "odd") -%>">
-        <td><%= button_to("X", result, :method => :delete) %></td>
+        <td width="5%"><%= button_to("X", result, :method => :delete) %></td>
         <small><td><i><%= link_to(result.created_at.strftime("%A " + "at %I:%M%p"), edit_result_path(result)) %> ** </i></td>
         <td><b><%=h truncate(result.title, :length => 90) %></b></td>
         <td><i><%=h truncate(result.comment, :length => 30) %></i></td></small>
