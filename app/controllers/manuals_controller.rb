@@ -4,8 +4,11 @@ before_filter :authorize, :only => [:index]
   def index
     @manuals_fail = Manual.fail.find(:all, :order => 'created_at DESC')
     @manuals_pass = Manual.pass.find(:all, :order => 'created_at DESC')
-    @fail_count = Manual.fail.count
-    @pass_count = Manual.pass.count
+    @total = Manual.count
+    @fail_count = @manuals_fail.count.to_f / @total.to_f
+    @pass_count = @manuals_pass.count.to_f / @total.to_f
+    @fail_count = (@fail_count * 100)
+    @pass_count = (@pass_count * 100)
   end
   
   def new
