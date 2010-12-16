@@ -104,15 +104,21 @@ background: #FFC1C1;
 
 #add-button{
 	margin-left: 1em;
-    text-align: left;
 }
 
 #reset-button {
     margin-right: 1em;
-    float: right;
 	
 }
 
 #results {
 	margin:1em;
+}
+
+#add {
+	float:left;
+}
+
+#reset {
+	float:left;
 }
