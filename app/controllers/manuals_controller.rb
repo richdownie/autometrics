@@ -5,10 +5,10 @@ before_filter :authorize, :only => [:index]
     @manuals_fail = Manual.fail.find(:all, :order => 'created_at DESC')
     @manuals_pass = Manual.pass.find(:all, :order => 'created_at DESC')
     @total = Manual.count
-    @fail_count = Manual.fail.find(:all).count.to_f / @total.to_f
-    @pass_count = Manual.pass.find(:all).count.to_f / @total.to_f
-    @fail_count = (@fail_count * 100)
-    @pass_count = (@pass_count * 100)
+    @fail_count = Manual.fail.count
+    @pass_count = Manual.pass.count
+    # @fail_count = (@fail_count * 100)
+    # @pass_count = (@pass_count * 100)
   end
   
   def new
