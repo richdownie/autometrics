@@ -7,10 +7,12 @@
 
 <div class="manuals" id="fail">
   <table>
+  <tr>
     <th align="left" width="5%"></th>
     <th align="left" width="20%">Tag</th>
     <th align="left" width="65%">Scenario</th>
     <th align="left" width="10%">Bug</th>
+  </tr>
     <% @manuals_fail.each do |manual| %>
       <tr>
       <td width="5%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
@@ -23,16 +25,16 @@
 </div>
 <div class="manuals" id="pass">
   <table>
+  <tr>
     <th align="left" width="5%"></th>
     <th align="left" width="20%">Tag</th>
     <th align="left" width="75%">Scenario</th>
-    <th align="left" width="10%">Bug</th>
+  </tr>  
     <% @manuals_pass.each do |manual| %>
       <tr>
       <td width="5%" align="left"><%= link_to image_tag("/images/delete.png", :border => 0, :confirm => 'Are you sure?', :method => :delete), manual %></td>
       <td width="20%"><%= manual.tag %></td>
       <td width="65%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
-      <td width="10%"><%= manual.bug %></td>
       </tr>  
     <% end %>
   </table>
