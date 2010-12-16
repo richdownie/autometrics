@@ -6,6 +6,7 @@
 <span id="reset-button"><%= link_to image_tag("/images/reset_scenarios.png", :border => 0, :height => 30, :width => 30), reset_scenarios_path, :confirm => 'This will reset all your current tests...sure about this?' %></span>
 
 <div class="manuals" id="fail">
+<h5 align="center">(<%= @fail_count %>)</h5>
   <table>
   <tr>
     <th align="left" width="5%"></th>
@@ -24,6 +25,7 @@
   </table>
 </div>
 <div class="manuals" id="pass">
+<h5 align="center">(<%= @pass_count %>)</h5>
   <table>
   <tr>
     <th align="left" width="5%"></th>
