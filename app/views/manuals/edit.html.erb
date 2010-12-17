@@ -10,9 +10,10 @@
     <%= f.text_field :bug %>
   </p>
   <p>
-    <%= f.label :tag %><br />
+   <%= f.label :tag %><br />
       <%= @tags = Tag.find(:all, :order => "name")
         collection_select(:manual, :tag_id, @tags, :id, :name, {:prompt => 'Tag?'}) %>
+        <%= link_to(' Edit List', tags_path) %>
   </p>
   <p>
     <%= f.label :Pass? %>
