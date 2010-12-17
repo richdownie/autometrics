@@ -1,5 +1,5 @@
 class Manual < ActiveRecord::Base
-  TAGS = [ 'CustomFields', 'Groups', 'Issues', 'LineItems']
+  belongs_to :tag
   
   named_scope :fail, :conditions => {:status => [false, nil]}
   named_scope :pass, :conditions => {:status => true}

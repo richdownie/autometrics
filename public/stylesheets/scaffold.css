@@ -52,10 +52,3 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
-.odd {
-	background: #FFFFCC;
-}
-
-.even {
-	background: #F0F0F0 ;
-}

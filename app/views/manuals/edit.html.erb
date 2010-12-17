@@ -11,7 +11,8 @@
   </p>
   <p>
     <%= f.label :tag %><br />
-    <%= f.select(:tag, Manual::TAGS, {:include_blank => 'None'}) %>
+      <%= @tags = Tag.find(:all, :order => "name")
+        collection_select(:manual, :tag_id, @tags, :id, :name, {:prompt => 'Tag?'}) %>
   </p>
   <p>
     <%= f.label :Pass? %>

@@ -42,7 +42,7 @@ before_filter :authorize, :only => [:index]
   def create
     @manual = Manual.new(params[:manual])
     if @manual.save
-      flash[:notice] = 'Scenario was successfully created.'
+        flash[:notice] = 'Scenario was successfully created.'
       redirect_to manuals_path
     else 
       flash[:notice] = 'Could not create new scenario'
