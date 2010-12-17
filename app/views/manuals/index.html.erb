@@ -9,22 +9,22 @@
     <i><h5 align="center">(<%= number_to_percentage(@fail_count, :precision => 0) %>)</h5></i>
     <table>
     <tr>
-      <th align="left" width="15%">Tag</th>
-      <th align="left" width="10%">Bug</th>
-      <th align="left" width="75%">Scenario</auth>
+      <th align="center" width="15%">Tag</th>
+      <th align="left" width="75%">Scenario</th>
+      <th width="5%"></th>
     </tr>
       <% @manuals_fail.each do |manual| %>
         <% if manual.bug.blank? %>
           <tr>
-          <td width="15%"><%= manual.tag.name %></td>
-          <td width="10%"><%= manual.bug %></td>
-          <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+          <td  align="center" width="15%"><%= manual.tag.name %></td>
+          <td width="80%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+          <td width="5%"></td>
           </tr>
         <% else %>
           <tr id="bold_text">
-          <td width="15%"><%= manual.tag.name %></td>
-          <td width="10%"><%= manual.bug %></td>
-          <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+          <td  align="center" width="15%"><%= manual.tag.name %></td>
+          <td width="80%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+          <td width="5%"><%= image_tag('/images/bug.png', :border => 0, :height => 21, :width => 21) %></td>
           </tr>
         <% end %>
       <% end %>
@@ -34,22 +34,21 @@
   <i><h5 align="center">(<%= number_to_percentage(@pass_count, :precision => 0) %>)</h5></i>
     <table>
     <tr>
-      <th align="left" width="15%">Tag</th>
-      <th align="left" width="10%">Bug</th>
-      <th align="left" width="75%">Scenario</th>
+      <th align="center" width="15%">Tag</th>
+      <th align="left" width="80%">Scenario</th>
+      <th width="5%"></th>
     </tr>  
-        <% @manuals_fail.each do |manual| %>
+        <% @manuals_pass.each do |manual| %>
           <% if manual.bug.blank? %>
             <tr>
-            <td width="15%"><%= manual.tag.name %></td>
-            <td width="10%"><%= manual.bug %></td>
+            <td  align="center" width="15%"><%= manual.tag.name %></td>
             <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
             </tr>
           <% else %>
             <tr id="bold_text">
-            <td width="15%"><%= manual.tag.name %></td>
-            <td width="10%"><%= manual.bug %></td>
+            <td align="center" width="15%"><%= manual.tag.name %></td>
             <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+            <td width="10%"><%= image_tag('/images/bug.png', :border => 0, :height => 21, :width => 21) %></td>
             </tr>
           <% end %>
         <% end %>
