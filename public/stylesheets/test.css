@@ -66,6 +66,10 @@ a:hover { color: #fff; background-color:#000; }
 	background: #F0F0F0 ;
 }
 
+#manuals-results {
+	margin: 4em;
+}
+
 .manuals a:link {
 	text-decoration: none;
 }
@@ -93,12 +97,12 @@ a:hover { color: #fff; background-color:#000; }
 
 #pass {
 background: #C0FF3E;
-  margin: 1em;
+  margin: 3em;
 }
 
 #fail {
 background: #FFC1C1;
-	margin: 1em;
+	margin: 3em;
   text-decoration: none;
 }
 
