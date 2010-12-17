@@ -15,7 +15,7 @@
     </tr>
       <% @manuals_fail.each do |manual| %>
         <tr>
-        <td width="15%"><%= manual.tag %></td>
+        <td width="15%"><%= manual.tag.name %></td>
         <td width="10%"><%= manual.bug %></td>
         <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
         </tr>  
