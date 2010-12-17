@@ -14,11 +14,19 @@
       <th align="left" width="75%">Scenario</auth>
     </tr>
       <% @manuals_fail.each do |manual| %>
-        <tr>
-        <td width="15%"><%= manual.tag.name %></td>
-        <td width="10%"><%= manual.bug %></td>
-        <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
-        </tr>  
+        <% if manual.bug.blank? %>
+          <tr>
+          <td width="15%"><%= manual.tag.name %></td>
+          <td width="10%"><%= manual.bug %></td>
+          <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+          </tr>
+        <% else %>
+          <tr id="bold_text">
+          <td width="15%"><%= manual.tag.name %></td>
+          <td width="10%"><%= manual.bug %></td>
+          <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+          </tr>
+        <% end %>
       <% end %>
     </table>
   </div>
@@ -30,13 +38,21 @@
       <th align="left" width="10%">Bug</th>
       <th align="left" width="75%">Scenario</th>
     </tr>  
-      <% @manuals_pass.each do |manual| %>
-        <tr>
-        <td width="15%"><%= manual.tag.name %></td>
-        <td width="10%"><%= manual.bug %></td>
-        <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
-        </tr>  
-      <% end %>
+        <% @manuals_fail.each do |manual| %>
+          <% if manual.bug.blank? %>
+            <tr>
+            <td width="15%"><%= manual.tag.name %></td>
+            <td width="10%"><%= manual.bug %></td>
+            <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+            </tr>
+          <% else %>
+            <tr id="bold_text">
+            <td width="15%"><%= manual.tag.name %></td>
+            <td width="10%"><%= manual.bug %></td>
+            <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+            </tr>
+          <% end %>
+        <% end %>
     </table>
   </div>
 <%= render :partial => 'js' %>

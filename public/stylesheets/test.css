@@ -126,3 +126,5 @@ background: #FFC1C1;
 #reset {
 	float:left;
 }
+
+#bold_text { font-weight: bold }
