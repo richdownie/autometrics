@@ -7,8 +7,8 @@ before_filter :authorize, :only => [:index]
     @total = Manual.count
     @fail_count = Manual.fail.count
     @pass_count = Manual.pass.count
-    # @fail_count = (@fail_count * 100)
-    # @pass_count = (@pass_count * 100)
+    @fail_count = @fail_count.to_f / @total.to_f * 100
+    @pass_count = @pass_count.to_f / @total.to_f * 100
   end
   
   def new
