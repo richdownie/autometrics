@@ -22,3 +22,5 @@
 <% end %>
 <%= link_to "Cancel", manuals_path %>
 </p>
+
+<p align="right"><%= button_to("DELETE", (@manual), :confirm => 'Are you sure?', :method => :delete) %></p>

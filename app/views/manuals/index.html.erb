@@ -9,17 +9,15 @@
   <i><h5 align="center">(<%= number_to_percentage(@fail_count, :precision => 0) %>)</h5></i>
   <table>
   <tr>
-    <th align="left" width="5%"></th>
-    <th align="left" width="20%">Tag</th>
-    <th align="left" width="65%">Scenario</th>
+    <th align="left" width="15%">Tag</th>
     <th align="left" width="10%">Bug</th>
+    <th align="left" width="75%">Scenario</th>
   </tr>
     <% @manuals_fail.each do |manual| %>
       <tr>
-      <td><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
-      <td width="20%"><%= manual.tag %></td>
-      <td width="65%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="15%"><%= manual.tag %></td>
       <td width="10%"><%= manual.bug %></td>
+      <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
@@ -28,15 +26,15 @@
 <i><h5 align="center">(<%= number_to_percentage(@pass_count, :precision => 0) %>)</h5></i>
   <table>
   <tr>
-    <th align="left" width="5%"></th>
-    <th align="left" width="20%">Tag</th>
+    <th align="left" width="15%">Tag</th>
+    <th align="left" width="10%">Bug</th>
     <th align="left" width="75%">Scenario</th>
   </tr>  
     <% @manuals_pass.each do |manual| %>
       <tr>
-      <td><%= button_to("X", manual, :confirm => 'Are you sure?', :method => :delete) %></td>
-      <td width="20%"><%= manual.tag %></td>
-      <td width="65%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="15%"><%= manual.tag %></td>
+      <td width="10%"><%= manual.bug %></td>
+      <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
       </tr>  
     <% end %>
   </table>
