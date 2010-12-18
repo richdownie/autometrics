@@ -20,7 +20,7 @@ pre {
 a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #000000; }
-a:hover {
+.manuals a:hover {
 	font-size: 17px;
 	padding:5px;
 	border-right-color: #000000;
