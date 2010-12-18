@@ -5,11 +5,17 @@
     <%= f.label :scenario %><br />
     <%= f.text_area :scenario, :size => "100x5" %>
   </p>
-     <%= f.label :tag %><br />
-        <%= @tags = Tag.find(:all, :order => "name")
-          collection_select(:manual, :tag_id, @tags, :id, :name, {:prompt => 'Tag?'}) %>
-          <%= link_to(' Edit List', tags_path) %>
-    </p>
+  <%= f.label :tag %><br />
+  <%= @tags = Tag.find(:all, :order => "name")
+    collection_select(:manual, :tag_id, @tags, :id, :name, {:prompt => '...'}) %>
+    <%= link_to(' Edit List', tags_path) %>
+  </p>
+  <p>
+  <%= f.label :iteration %><br />
+  <%= @iterations = Iteration.find(:all, :order => "title")
+    collection_select(:manual, :iteration_id, @iterations, :id, :title, {:prompt => '...'}) %>
+    <%= link_to(' Edit List', iterations_path) %>
+  </p>
   <p>
   <%= f.submit 'Create' %>
 <% end %>

@@ -1,0 +1,21 @@
+<h1>Listing iterations</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+
+<% @iterations.each do |iteration| %>
+  <tr>
+    <td><%=h iteration.title %></td>
+    <td><%= link_to 'Show', iteration %></td>
+    <td><%= link_to 'Edit', edit_iteration_path(iteration) %></td>
+    <td><%= link_to 'Destroy', iteration, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New iteration', new_iteration_path %> | <br/>
+<%= link_to 'Back to Manual Steps', manuals_path %>
