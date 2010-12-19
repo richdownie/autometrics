@@ -13,8 +13,8 @@ before_filter :authorize, :only => [:index]
       @fail_count = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
       @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
     else
-      @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "2"], :order => 'created_at DESC')
-      @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "2"], :order => 'created_at DESC')
+      @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'created_at DESC')
+      @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'created_at DESC')
       @total = Manual.count
       @fail_count = Manual.fail.count
       @pass_count = Manual.pass.count
