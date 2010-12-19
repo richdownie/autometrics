@@ -16,7 +16,7 @@
     collection_select(:manual, :iteration_id, @iterations, :id, :title, {:prompt => '...'}) %>
     <%= link_to(' Edit List', iterations_path) %>
   </p>
-  <p>
+  <p align="center">
   <%= f.submit 'Create' %>
 <% end %>
   <%= link_to "Cancel", manuals_path %>
