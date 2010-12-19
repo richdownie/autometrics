@@ -1,6 +1,10 @@
 class ManualsController < ApplicationController
 before_filter :authorize, :only => [:index]
   
+  def reset_scenarios
+    @manuals = Manual.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).green_scenarios.reset
+  end
+  
   def index
     if params[:search]
       @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'created_at DESC')
@@ -41,11 +45,6 @@ before_filter :authorize, :only => [:index]
         format.xml  { render :xml => @manual.errors, :status => :unprocessable_entity }
       end
     end
-  end
-      
-  def reset_scenarios
-    @manuals = Manual.green_scenarios.reset
-    redirect_to manuals_path
   end
       
   def create

@@ -3,9 +3,9 @@
   <%= link_to 'Automation Results', results_path %> | <%= link_to 'Metrics', failures_path %> | <%= link_to 'Logout', logout_path %>
 </div>
 <span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span>
-<span id="reset-button"><%= link_to image_tag("/images/reset_scenarios.png", :border => 0, :height => 30, :width => 30), reset_scenarios_path, :confirm => 'This will reset all your current tests...sure about this?' %></span>
+<span id="reset-button" style="display:none"><%= link_to image_tag("/images/reset_scenarios.png", :border => 0, :height => 30, :width => 30), reset_scenarios_path, :confirm => 'This will reset all your current tests...sure about this?' %></span>
 
-<div align="right"><% form_tag manuals_path, :method => 'get' do %>
+<div id="search"><% form_tag manuals_path, :method => 'get' do %>
   <p>Filter by Iteration ID
   <%= text_field_tag :search, params[:search], :size => "1x5", :default => 1 %>
   <%= submit_tag "Search", :name => nil %>
