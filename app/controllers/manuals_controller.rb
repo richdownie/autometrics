@@ -54,7 +54,7 @@ before_filter :authorize, :only => [:index]
     respond_to do |format|
       if @manual.save
         flash[:notice] = 'Step was successfully created.'
-        format.html { redirect_to(@manual) }
+        format.html { redirect_to manuals_path }
         format.xml  { render :xml => @manual, :status => :created, :location => @manual }
       else
         format.html { render :action => "new" }
