@@ -112,7 +112,7 @@ background: #FFC1C1;
 }
 
 #add-button{
-	margin-left: 1em;
+	margin-left: 3em;
 }
 
 #reset-button {
@@ -136,4 +136,9 @@ background: #FFC1C1;
 
 #search {
 	margin-left:3em;
+}
+
+table.manual_steps {
+border:3px;
+	border-style:solid;
 }

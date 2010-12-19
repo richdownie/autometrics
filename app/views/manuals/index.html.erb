@@ -7,14 +7,14 @@
 
 <div id="search"><% form_tag manuals_path, :method => 'get' do %>
   <p>Filter by Iteration ID
-  <%= text_field_tag :search, params[:search], :size => "1x5", :default => 1 %>
+  <%= text_field_tag :search, params[:search], :size => "1x5" %>
   <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %></div>
 
-  <div class="manuals" id="fail">
     <i><h5 align="center">(<%= number_to_percentage(@fail_count, :precision => 0) %>)</h5></i>
-    <table>
+    <div class="manuals" id="fail">
+    <table class="manual_steps">
     <tr>
       <th width="5%"></th>
       <th width="15%" align="left">Tag</th>
@@ -37,9 +37,9 @@
       <% end %>
     </table>
   </div>
-  <div class="manuals" id="pass">
   <i><h5 align="center">(<%= number_to_percentage(@pass_count, :precision => 0) %>)</h5></i>
-    <table>
+  <div class="manuals" id="pass">
+    <table class="manual_steps">
     <tr>
       <th width="5%"></th>
       <th width="15%" align="left">Tag</th>
