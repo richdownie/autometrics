@@ -5,9 +5,9 @@ before_filter :authorize, :only => [:index]
     if params[:search]
       @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'created_at DESC')
       @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'created_at DESC')
-      @total = Manual.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).count
-      @fail_count = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).count
-      @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).count
+      @total = Manual.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
+      @fail_count = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
+      @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
     else
       @manuals_fail = Manual.fail.find(:all, :order => 'created_at DESC')
       @manuals_pass = Manual.pass.find(:all, :order => 'created_at DESC')
