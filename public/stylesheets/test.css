@@ -143,3 +143,7 @@ table.manual_steps {
 border:3px;
 	border-style:solid;
 }
+
+#iteration {
+	text-align:center;
+}

@@ -7,12 +7,14 @@ before_filter :authorize, :only => [:index]
   
   def index
     if params[:search]
+      @iteration = Iteration.find(:first, :conditions => ['id = ?', "#{params[:search]}"])
       @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'created_at DESC')
       @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'created_at DESC')
       @total = Manual.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
       @fail_count = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
       @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
     else
+      @iteration = Iteration.find(:first, :conditions => ['id = ?', "1"])
       @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'created_at DESC')
       @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'created_at DESC')
       @total = Manual.count
@@ -21,6 +23,7 @@ before_filter :authorize, :only => [:index]
     end
     @fail_count = @fail_count.to_f / @total.to_f * 100
     @pass_count = @pass_count.to_f / @total.to_f * 100
+    
     
   end
   

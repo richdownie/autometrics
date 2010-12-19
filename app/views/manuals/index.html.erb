@@ -5,6 +5,7 @@
 <span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span>
 <span id="reset-button" style="display:none"><%= link_to image_tag("/images/reset_scenarios.png", :border => 0, :height => 30, :width => 30), reset_scenarios_path, :confirm => 'This will reset all your current tests...sure about this?' %></span>
 
+<div id="iteration"><%= @iteration.title %></div>
 <div id="search"><% form_tag manuals_path, :method => 'get' do %>
   <p>
   <%= select_tag "search", options_from_collection_for_select(Iteration.all, :id, :title, {:include_blank => 'None'}), :multiple => true %>
