@@ -135,7 +135,8 @@ background: #FFC1C1;
 #bold_text { font-weight: bold }
 
 #search {
-	margin-left:3em;
+   text-align:left;
+   margin-left:2em;
 }
 
 table.manual_steps {
