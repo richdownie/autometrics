@@ -1,5 +1,6 @@
 class Manual < ActiveRecord::Base
   belongs_to :tag
+  validates_presence_of :tag_id, :iteration_id, :name
   
   named_scope :fail, :conditions => {:status => [false, nil]}
   named_scope :pass, :conditions => {:status => true}

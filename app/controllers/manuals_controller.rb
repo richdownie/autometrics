@@ -50,11 +50,16 @@ before_filter :authorize, :only => [:index]
       
   def create
     @manual = Manual.new(params[:manual])
-    if @manual.save
-        flash[:notice] = 'Scenario was successfully created.'
-      redirect_to manuals_path
-    else 
-      flash[:notice] = 'Could not create new scenario'
+
+    respond_to do |format|
+      if @manual.save
+        flash[:notice] = 'Step was successfully created.'
+        format.html { redirect_to(@manual) }
+        format.xml  { render :xml => @manual, :status => :created, :location => @manual }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @manual.errors, :status => :unprocessable_entity }
+      end
     end
   end
   
