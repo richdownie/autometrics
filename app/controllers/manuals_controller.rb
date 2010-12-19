@@ -11,7 +11,7 @@ before_filter :authorize, :only => [:index]
     else
       @manuals_fail = Manual.fail.find(:all, :order => 'created_at DESC')
       @manuals_pass = Manual.pass.find(:all, :order => 'created_at DESC')
-      @total = Manual.all.count
+      @total = Manual.count
       @fail_count = Manual.fail.count
       @pass_count = Manual.pass.count
     end
