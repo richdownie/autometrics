@@ -7,8 +7,7 @@
 
 <div id="search"><% form_tag manuals_path, :method => 'get' do %>
   <p>
-  <%= select_tag "search", options_from_collection_for_select(Iteration.all, :id, :title) %>
-  
+  <%= select_tag "search", options_from_collection_for_select(Iteration.all, :id, :title, {:include_blank => 'None'}), :multiple => true %>
   <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %></div>
