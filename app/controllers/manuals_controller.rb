@@ -2,8 +2,8 @@ class ManualsController < ApplicationController
 before_filter :authorize, :only => [:index]
   
   def index
-    @manuals_fail = Manual.fail.find(:all, :order => 'created_at DESC')
-    @manuals_pass = Manual.pass.find(:all, :order => 'created_at DESC')
+    @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'created_at DESC')
+    @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'created_at DESC')
     @total = Manual.count
     @fail_count = Manual.fail.count
     @pass_count = Manual.pass.count
