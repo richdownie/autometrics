@@ -22,7 +22,6 @@ a:visited { color: #666; }
 a:hover { color: #000000; }
 .manuals a:hover {
 	color: #A52A2A;
-	padding:5px;
 	border-right-color: #000000;
 	border-left-color: #000000;
 }
