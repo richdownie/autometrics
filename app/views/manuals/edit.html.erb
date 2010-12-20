@@ -1,4 +1,6 @@
 <h1>EDIT Manual Scenario</h1>
+<%= link_to_function 'My link with obtrusive JavaScript', 'alert("Oh no!")' %>
+ 
 <% form_for(@manual) do |f| %>
   <%= f.error_messages %>
   <p>*
@@ -27,8 +29,8 @@
   </p>
   <p align="center">
     <%= f.submit 'Update' %>
+    <%= link_to "Cancel", manuals_path %>
+  </p>
 <% end %>
-<%= link_to "Cancel", manuals_path %>
-</p>
 
 <div align="center"><%= button_to ("DELETE", (@manual), :confirm => 'Are you sure?', :method => :delete) %></div>
