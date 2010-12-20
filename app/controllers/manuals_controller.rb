@@ -8,15 +8,15 @@ before_filter :authorize, :only => [:index]
   def index
     if params[:search]
       @iteration = Iteration.find(:first, :conditions => ['id = ?', "#{params[:search]}"])
-      @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'tag_id DESC, created_at DESC')
-      @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'tag_id DESC, created_at DESC')
+      @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'tag_id ASC, created_at DESC')
+      @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'tag_id ASC, created_at DESC')
       @total = Manual.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
       @fail_count = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
       @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
     else
       @iteration = Iteration.find(:first, :conditions => ['id = ?', "1"])
-      @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'tag_id DESC, created_at DESC')
-      @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'tag_id DESC, created_at DESC')
+      @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'tag_id ASC, created_at DESC')
+      @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'tag_id ASC, created_at DESC')
       @total = Manual.count
       @fail_count = Manual.fail.count
       @pass_count = Manual.pass.count
