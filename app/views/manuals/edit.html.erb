@@ -33,8 +33,12 @@
     <%= f.check_box :internet_explorer %>
   </p>
   <p>
-    <%= f.label :Pass? %>
-    <%= f.check_box :status %>
+  <%= f.label :Pass? %>
+    <% if @manual.firefox == true && @manual.internet_explorer == true || @manual.status == true %>
+    <%= f.check_box :status %> (Must verify both FF and IE first in order to pass this Scenario.)
+    <% else %>
+    <%= f.check_box :status, :disabled => true, :readonly => true %>
+    <% end %>
   </p>
   <p align="center">
     <%= f.submit 'Update' %>
