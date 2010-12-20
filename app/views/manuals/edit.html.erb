@@ -23,6 +23,15 @@
     collection_select(:manual, :iteration_id, @iterations, :id, :title, {:prompt => '*Required'}) %>
     <%= link_to(' Edit List', iterations_path) %>
   </p>
+  <hr/>
+  <p>
+    <%= f.label :firefox %>
+    <%= f.check_box :firefox %>
+  </p>
+  <p>
+    <%= f.label :internet_explorer %>
+    <%= f.check_box :internet_explorer %>
+  </p>
   <p>
     <%= f.label :Pass? %>
     <%= f.check_box :status %>
