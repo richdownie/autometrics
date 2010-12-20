@@ -148,6 +148,11 @@ border:3px;
 	text-align:center;
 }
 
-.info {
+.info-green {
+	color: #006633;
+	font-weight: bold;
+}
+.info-red {
 	color: #A52A2A;
+	font-weight: bold;
 }

@@ -35,9 +35,9 @@
   <p>
   <%= f.label :Pass? %>
     <% if @manual.firefox == true && @manual.internet_explorer == true || @manual.status == true %>
-    <%= f.check_box :status %>
+    <%= f.check_box :status %> <span class="info-green">(OK)</span>
     <% else %>
-    <%= f.check_box :status, :disabled => true, :readonly => true %> <span class="info">(Must verify both FF and IE first in order to pass this Scenario.)</span>
+    <%= f.check_box :status, :disabled => true, :readonly => true %> <span class="info-red">(Must verify both FF and IE first in order to pass this Scenario.)</span>
     <% end %>
   </p>
   <p align="center">
