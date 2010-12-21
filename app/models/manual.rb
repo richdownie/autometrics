@@ -1,7 +1,7 @@
 class Manual < ActiveRecord::Base
   belongs_to :tag
   validates_presence_of :tag_id, :iteration_id, :scenario
-  validates_numericality_of :jira
+  validates_numericality_of :jira, :bug
   
   named_scope :fail, :conditions => {:status => [false, nil]}
   named_scope :pass, :conditions => {:status => true}
