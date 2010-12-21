@@ -4,6 +4,5 @@ class ChangeBugToManual < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :manuals, :bug
   end
 end
