@@ -1,11 +1,10 @@
 <h1>EDIT Manual Scenario</h1>
-<%= link_to_function 'My link with obtrusive JavaScript', 'alert("Oh no!")' %>
  
 <% form_for(@manual) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :jira %><br />
-    <%= f.text_field :jira %>
+    <b><a href="https://support.rollstream.com/browse/DEV-<%= @manual.jira %>" target="_blank"><%= f.label :jira %></a></b>
+    <%= f.text_field :jira, :size => "3x10" %>
   </p>
   <p>*
     <%= f.label :scenario %><br />

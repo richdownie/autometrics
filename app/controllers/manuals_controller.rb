@@ -33,6 +33,7 @@ before_filter :authorize, :only => [:index]
   
   def edit
     @manual = Manual.find(params[:id])
+    @link = "https://support.rollstream.com/browse/DEV-"
   end
   
   def update
