@@ -130,6 +130,10 @@ background: #C0FF3E;
 	float:left;
 }
 
+#search-info {
+	float:left;
+}
+
 .bold-text { 
 	color: #A52A2A;
 	font-weight: bold 

@@ -1,5 +1,7 @@
 <div class="header-nav" align="right">
-  <span id="add" style="display:none">Add New Scenario</span><span id="reset" style="display:none">Retest All Scenarios</span>
+  <span id="add" style="display:none">Add New Scenario</span>
+  <span id="reset" style="display:none">Retest All Scenarios</span>
+  <span id="search-info" style="display:none">Click on an iteration then click here</span>
   <%= link_to 'Automation Results', results_path %> | <%= link_to 'Metrics', failures_path %> | <%= link_to 'Logout', logout_path %>
 </div>
 <span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span>
