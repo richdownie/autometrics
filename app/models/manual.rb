@@ -3,6 +3,7 @@ class Manual < ActiveRecord::Base
   validates_presence_of :tag_id, :iteration_id, :scenario
   validates_numericality_of :jira, :allow_nil => true
   validates_numericality_of :bug, :allow_nil => true
+  validates_numericality_of :count, :allow_nil => true
   
   
   named_scope :fail, :conditions => {:status => [false, nil]}

@@ -35,6 +35,10 @@
     <%= f.label :internet_explorer %>
     <%= f.check_box :internet_explorer %>
   </p>
+  <p align="center">
+    <%= f.label :test_count %>
+    <%= f.text_field :count, :size => "2x10" %>
+  </p>
   <p>
   <%= f.label :Pass? %>
     <% if @manual.firefox == true && @manual.internet_explorer == true || @manual.status == true %>
