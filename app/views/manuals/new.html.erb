@@ -1,4 +1,5 @@
-<h1>ADD Manual Scenario</h1>
+<div class="test-criteria">
+<h2>Criteria</h2>
 <% form_for(@manual) do |f| %>
   <%= f.error_messages %>
   <p>
@@ -21,6 +22,7 @@
     collection_select(:manual, :iteration_id, @iterations, :id, :title, {:prompt => '*Required'}) %>
     <%= link_to(' Edit List', iterations_path) %>
   </p>
+</div>
   <p align="center">
   <%= f.submit 'Create' %>
 <% end %>
