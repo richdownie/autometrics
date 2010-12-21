@@ -18,7 +18,7 @@ pre {
 }
 
 a { color: #000; }
-a:visited { color: #666; }
+/*a:visited { color: #666; }*/
 a:hover { color: #000000; }
 .manuals a:hover {
 	color: #A52A2A;
@@ -105,9 +105,8 @@ background: #C0FF3E;
 }
 
 #fail {
-background: #FFC1C1;
+   background: #FFC1C1;
 	margin: 3em;
-  text-decoration: none;
 }
 
 #add-button{
@@ -131,7 +130,10 @@ background: #FFC1C1;
 	float:left;
 }
 
-#bold_text { font-weight: bold }
+.bold-text { 
+	color: #A52A2A;
+	font-weight: bold 
+	}
 
 #search {
    text-align:left;
