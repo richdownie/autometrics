@@ -3,6 +3,10 @@
  
 <% form_for(@manual) do |f| %>
   <%= f.error_messages %>
+  <p>
+    <%= f.label :jira %><br />
+    <%= f.text_field :jira %>
+  </p>
   <p>*
     <%= f.label :scenario %><br />
     <%= f.text_area :scenario, :size => "100x5"  %>
