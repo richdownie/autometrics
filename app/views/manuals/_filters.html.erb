@@ -1,9 +1,10 @@
-<table align="center">
+<table class="filter" align="center">
   <tr>
     <td><i1><h4>*<%= @iteration.title %>*</h4></i></td>
     <td><i><h5 align="center">Failed (<%= number_to_percentage(@fail_count, :precision => 0) %>)
        <%= check_box_tag 'hide fail', checked = true, :id => "hide-fail" %></h5></i></td>
     <td><i><h5 align="center">Passed (<%= number_to_percentage(@pass_count, :precision => 0) %>)
        <%= check_box_tag 'hide pass', checked = true, :id => "hide-pass" %></h5></i></td>
+       <td><span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span></td>
   </tr>
 </table>
