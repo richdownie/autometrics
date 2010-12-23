@@ -18,4 +18,30 @@ $("div#search").mouseleave(function () {
 $("span#search-info").hide();
 });
 $("td.bug").hover(function(){$(this).fadeOut(100);$(this).fadeIn(100);});
+
+
+$("input#hide_fail").click(function (){
+
+  if ($("input#hide_fail").is(":checked"))
+{
+  $("div#fail").hide("fast");
+}
+  else
+{ 
+    $("div#fail").show("fast");
+}
+});
+
+
+$("input#hide_pass").click(function (){
+
+  if ($("input#hide_pass").is(":checked"))
+{
+  $("div#pass").hide("fast");
+}
+  else
+{ 
+    $("div#pass").show("fast");
+}
+});
 </script>
