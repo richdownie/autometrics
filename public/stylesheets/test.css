@@ -70,17 +70,7 @@ a:hover { color: #000000; }
 	background: #F0F0F0 ;
 }
 
-#manuals-results {
-	margin: 4em;
-}
 
-.manuals a:link {
-	text-decoration: none;
-}
-
-.manuals a:visited {
-	text-decoration: none;
-}
 
 .header-nav a:visited {
   text-decoration: none;
@@ -99,15 +89,9 @@ a:hover { color: #000000; }
   margin: 1em;
 }
 
-#pass {
-background: #C0FF3E;
-  margin: 3em;
-}
 
-#fail {
-   background: #FFC1C1;
-	margin: 3em;
-}
+
+
 
 #add-button{
 	margin-left: 3em;
@@ -126,25 +110,13 @@ background: #C0FF3E;
 	float:left;
 }
 
-#search-info {
-	float:left;
-}
 
 .bold-text { 
 	color: #A52A2A;
 	font-weight: bold 
 	}
 
-#search {
-	text-align:center;
-   padding-top:1em;
-   margin-bottom:2em;
-}
 
-table.manual_steps {
-border:3px;
-	border-style:solid;
-}
 
 
 .info-green {
@@ -156,19 +128,4 @@ border:3px;
 	font-weight: bold;
 }
 
-.test-criteria {
-	padding:2em;
-    margin-left: 10em;
-	margin-right: 10em;
-	border: 3px solid #999;: bold;
-	background-color:#FFFFCC;
-}
 
-.test-results {
-	padding:2em;
-    margin-left: 10em;
-	margin-right: 10em;
-	border: 3px solid #999;: bold;
-	background-color:#CCFFCC;
-	
-}

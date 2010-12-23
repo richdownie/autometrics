@@ -1,0 +1,16 @@
+.test-criteria {
+	padding:2em;
+    margin-left: 10em;
+	margin-right: 10em;
+	border: 3px solid #999;: bold;
+	background-color:#FFFFCC;
+}
+
+.test-results {
+	padding:2em;
+    margin-left: 10em;
+	margin-right: 10em;
+	border: 3px solid #999;: bold;
+	background-color:#CCFFCC;
+	
+}
