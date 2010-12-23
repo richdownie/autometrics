@@ -1,6 +1,4 @@
-#manuals-results {
-	margin: 4em;
-}
+
 
 .manuals a:link {
 	text-decoration: none;
@@ -17,5 +15,7 @@ border:3px;
 
 #pass {
 background: #C0FF3E;
-  margin: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-top: 1em;
 }
