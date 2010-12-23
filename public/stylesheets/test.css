@@ -118,10 +118,6 @@ background: #C0FF3E;
 	
 }
 
-#results {
-	margin:1em;
-}
-
 #add {
 	float:left;
 }
@@ -140,8 +136,9 @@ background: #C0FF3E;
 	}
 
 #search {
-   text-align:left;
-   margin-left:2em;
+	text-align:center;
+   padding-top:1em;
+   margin-bottom:2em;
 }
 
 table.manual_steps {
@@ -149,9 +146,6 @@ border:3px;
 	border-style:solid;
 }
 
-#iteration {
-	text-align:center;
-}
 
 .info-green {
 	color: #006633;

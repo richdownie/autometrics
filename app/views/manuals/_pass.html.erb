@@ -1,6 +1,4 @@
-
-<div class="manuals" id="pass">
-  <table class="manual_steps">
+<table class="manual_steps">
   <tr>
     <th width="4%"></th>
     <th width="15%" align="left">Tag</th>
@@ -8,24 +6,23 @@
     <th width="75%" align="left">Scenario</th>
     <th width="1%"></th>
   </tr>  
-      <% @manuals_pass.each do |manual| %>
-        <% if manual.bug.blank? %>
-          <tr>
-          <td width="4%"></td>
-          <td width="15%"><%= link_to(manual.tag.name, tags_path) %></td>
-          <td width="5%" align="left"><% unless manual.jira.blank? %><%= link_to(manual.jira, edit_manual_path(manual)) %><% end %></td>
-          <td width="80%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
-          <td width="1%"><small><%= manual.count %></small></td>
-          </tr>
-        <% else %>
-          <tr>
-            <td align="center" width="4%"><%= image_tag('/images/bug.png', :border => 0, :height => 21, :width => 21) %></td>
-            <td width="15%"><%= link_to(manual.tag.name, tags_path) %></td>
-            <td width="5" align="left"><% unless manual.jira.blank? %><%= link_to(manual.jira, edit_manual_path(manual)) %><% end %></td>
-            <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
-            <td width="1%"><small><%= manual.count %></small></td>
-          </tr>
-        <% end %>
-      <% end %>
-  </table>
-</div>
+  <% @manuals_pass.each do |manual| %>
+    <% if manual.bug.blank? %>
+      <tr>
+      <td width="4%"></td>
+      <td width="15%"><%= link_to(manual.tag.name, tags_path) %></td>
+      <td width="5%" align="left"><% unless manual.jira.blank? %><%= link_to(manual.jira, edit_manual_path(manual)) %><% end %></td>
+      <td width="80%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+      <td width="1%"><small><%= manual.count %></small></td>
+      </tr>
+    <% else %>
+      <tr>
+        <td align="center" width="4%"><%= image_tag('/images/bug.png', :border => 0, :height => 21, :width => 21) %></td>
+        <td width="15%"><%= link_to(manual.tag.name, tags_path) %></td>
+        <td width="5" align="left"><% unless manual.jira.blank? %><%= link_to(manual.jira, edit_manual_path(manual)) %><% end %></td>
+        <td width="75%"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
+        <td width="1%"><small><%= manual.count %></small></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

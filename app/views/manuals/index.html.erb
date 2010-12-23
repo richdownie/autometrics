@@ -1,24 +1,27 @@
 <div class="header-nav" align="right">
   <span id="add" style="display:none">Add New Scenario</span>
   <span id="reset" style="display:none">Retest All Scenarios</span>
-  <span id="search-info" style="display:none">Click on an iteration then click here</span>
+  <span id="search-info" style="display:none">Select an iteration then Search</span>
   <%= link_to 'Automation Results', results_path %> | <%= link_to 'Metrics', failures_path %> | <%= link_to 'Logout', logout_path %>
 </div>
+
 <span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span>
 <span id="reset-button" style="display:none"><%= link_to image_tag("/images/reset_scenarios.png", :border => 0, :height => 30, :width => 30), reset_scenarios_path, :confirm => 'This will reset all your current tests...sure about this?' %></span>
 
-<div id="iteration"><%= @iteration.title %></div>
-<div id="search"><% form_tag manuals_path, :method => 'get' do %>
-  <p>
-  <%= select_tag "search", options_from_collection_for_select(Iteration.all, :id, :title, {:include_blank => 'None'}), :multiple => true %>
-  <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %></div>
+<div id="search">
+  <%= render :partial => 'search' %> 
+</div>
 
-<%= render :partial => 'filters' %>
+<div id="filters"> 
+  <%= render :partial => 'filters' %>
+</div>
 
-<%= render :partial => 'fail' %> 
+<div class="manuals" id="fail">
+  <%= render :partial => 'fail' %> 
+</div>
 
-<%= render :partial => 'pass' %> 
+<div class="manuals" id="pass">
+  <%= render :partial => 'pass' %> 
+</div>
 
 <%= render :partial => 'js' %>
