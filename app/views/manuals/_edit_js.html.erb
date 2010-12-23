@@ -1,0 +1,25 @@
+<script>
+$("input#manual_firefox").click(function (){
+
+  if ($("input#manual_firefox").is(":checked"))
+{
+  $("input#manual_status").removeAttr('disabled');
+}
+else
+{
+ $("input#manual_status").attr('disabled', true);
+}
+});
+
+$("input#manual_internet_explorer").click(function (){
+
+  if ($("input#manual_internet_explorer").is(":checked"))
+{
+  $("input#manual_status").removeAttr('disabled');
+}
+else
+{
+ $("input#manual_status").attr('disabled', true);
+}
+});
+</script>
