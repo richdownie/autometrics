@@ -1,1 +1,2 @@
 will_paginate >= 2.3.14
+tiny_mce >= 0.1.4
