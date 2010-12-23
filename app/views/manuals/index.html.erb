@@ -15,8 +15,7 @@
   </p>
 <% end %></div>
 
-    <i><h5 align="center">(<%= number_to_percentage(@fail_count, :precision => 0) %>)
-       <%= check_box_tag 'hide fail', :id => "hide-fail" %></h5></i>
+<%= render :partial => 'filters' %>
 
     <div class="manuals" id="fail">
     <table class="manual_steps">
@@ -45,8 +44,7 @@
       <% end %>
     </table>
   </div>
-  <i><h5 align="center">(<%= number_to_percentage(@pass_count, :precision => 0) %>)
-     <%= check_box_tag 'hide pass', :id => "hide-pass" %></h5></i>
+
   <div class="manuals" id="pass">
     <table class="manual_steps">
     <tr>
