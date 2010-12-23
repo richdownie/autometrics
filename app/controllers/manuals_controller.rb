@@ -1,5 +1,6 @@
 class ManualsController < ApplicationController
-before_filter :authorize, :only => [:index]
+  before_filter :authorize, :only => [:index]
+  uses_tiny_mce
   
   def reset_scenarios
     @manuals = Manual.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).green_scenarios.reset
