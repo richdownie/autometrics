@@ -44,4 +44,16 @@ $("input#hide_pass").click(function (){
     $("div#pass").hide("fast");
 }
 });
+
+$("input#hide_block").click(function (){
+
+  if ($("input#hide_block").is(":checked"))
+{
+  $("div#blocked").show("fast");
+}
+  else
+{ 
+    $("div#blocked").hide("fast");
+}
+});
 </script>
