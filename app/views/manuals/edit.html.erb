@@ -27,6 +27,10 @@
 <br/><br/>
 <div class="test-results">
   <h2>Test Results</h2>
+  <p align="center">
+    <%= f.label :blocked %>
+    <%= f.check_box :blocked %> 
+  </p>
   <p>
     <%= f.label :steps %><br />
     <%= f.text_area :steps, :size => "97x10", :class => "mceEditor"  %>

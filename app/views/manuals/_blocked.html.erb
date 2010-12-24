@@ -6,7 +6,7 @@
     <th width="75%" align="left">Scenario</th>
     <th width="5%"></th>
   </tr>
-  <% @manuals_fail.each do |manual| %>
+  <% @manuals_blocked.each do |manual| %>
     <% if manual.bug.blank? %>
       <tr>
       <td width="5%"></td>
@@ -21,7 +21,7 @@
       <td width="15%"><%= link_to(manual.tag.name, tags_path) %></td>
       <td width="5%" align="left"><% unless manual.jira.blank? %><%= link_to(manual.jira, edit_manual_path(manual)) %><% end %></td>
       <td width="75%" bordercolor="#808080"><%= link_to(manual.scenario, edit_manual_path(manual)) %></td>
-      <td width="75"></td>
+        <td width="75"></td>
       </tr>
     <% end %>
   <% end %>
