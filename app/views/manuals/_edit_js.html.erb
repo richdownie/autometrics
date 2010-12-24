@@ -1,4 +1,12 @@
 <script>
+$("input#manual_status").click(function (){
+
+  if ($("input#manual_status").is(":checked"))
+{
+  $("input#manual_blocked").removeAttr('disabled');
+}
+});
+
 $("input#manual_firefox").click(function (){
 
   if ($("input#manual_firefox").is(":checked"))
@@ -22,4 +30,27 @@ else
  $("input#manual_status").attr('disabled', true);
 }
 });
+
+$("input#manual_blocked").click(function (){
+
+  if ($("input#manual_blocked").is(":checked"))
+{
+  $("div#results").hide("fast");
+}
+  else
+{ 
+    $("div#results").show("fast");
+}
+});
+
+$(document).ready(function() {
+    if ($("input#manual_blocked").is(":checked"))
+  {
+    $("div#results").hide("fast");
+  }
+    else
+  { 
+      $("div#results").show("fast");
+  }
+  });
 </script>

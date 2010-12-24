@@ -24,38 +24,36 @@
     <%= link_to(' Edit List', iterations_path) %>
   </p>
 </div>
-<br/><br/>
-<div class="test-results">
-  <h2>Test Results</h2>
-  <p align="center">
-    <%= f.label :blocked %>
-    <%= f.check_box :blocked %> 
-  </p>
+<p align="center" class="edit-blocked">
+  <b><%= f.label :blocked %></b><br/>
+  <%= f.check_box :blocked %> 
+</p>
+<div class="test-results" id="results">
+  <h2>Test Results</h2><p align="center"><%= f.label :test_count %><%= f.text_field :count, :size => "2x10" %></p>
   <p>
     <%= f.label :steps %><br />
     <%= f.text_area :steps, :size => "97x10", :class => "mceEditor"  %>
   </p>
+  <table>
+    <tr>
+    <td><%= f.label :firefox %>
+    <%= f.check_box :firefox %></td>
+    <td><%= f.label :internet_explorer %>
+    <%= f.check_box :internet_explorer %></td>
+  </tr>
+</table>
+   <p>
+    <%= f.label :Pass? %>
+      <% if @manual.firefox == true && @manual.internet_explorer == true || @manual.status == true %>
+      <%= f.check_box :status %> <span class="info-green">(OK)</span>
+      <% else %>
+      <%= f.check_box :status, :disabled => true, :readonly => true %> <span class="info-red">(Have you tested both FF and IE?)</span>
+      <% end %>
+   </p>
   <p>
-    <%= f.label :firefox %>
-    <%= f.check_box :firefox %>
-  </p>
-  <p>
-    <%= f.label :internet_explorer %>
-    <%= f.check_box :internet_explorer %>
+
   </p>
   <p align="center">
-    <%= f.label :test_count %>
-    <%= f.text_field :count, :size => "2x10" %>
-  </p>
-  <p>
-  <%= f.label :Pass? %>
-    <% if @manual.firefox == true && @manual.internet_explorer == true || @manual.status == true %>
-    <%= f.check_box :status %> <span class="info-green">(OK)</span>
-    <% else %>
-    <%= f.check_box :status, :disabled => true, :readonly => true %> <span class="info-red">(Have you tested both FF and IE?)</span>
-    <% end %>
-  </p>
-  <p>
     <b><a href="https://support.rollstream.com/browse/DEV-<%= @manual.bug %>" target="_blank"><%= f.label :bug %></a></b>
     <%= f.text_field :bug, :size => "3x10"  %>
   </p>
