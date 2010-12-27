@@ -16,7 +16,7 @@
       <td width="5%" align="center"><%= manual.count %></td>
       </tr>
     <% else %>
-      <tr>
+      <tr class="bold-text">
         <td align="center" width="5%"><%= image_tag('/images/bug.png', :border => 0, :height => 21, :width => 21) %></td>
         <td width="15%"><%= link_to(manual.tag.name, tags_path) %></td>
         <td width="5" align="left"><% unless manual.jira.blank? %><%= link_to(manual.jira, edit_manual_path(manual)) %><% end %></td>
