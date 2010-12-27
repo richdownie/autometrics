@@ -9,6 +9,11 @@ class Manual < ActiveRecord::Base
   named_scope :fail, :conditions => {:status => [false, nil]}
   named_scope :pass, :conditions => {:status => true}
   named_scope :blocked, :conditions => {:blocked => true}
+  named_scope :untested, :conditions => {:untested => true} do
+    def reset
+      each { |x| x .update_attribute(:untested, false) }
+    end
+  end
   
   named_scope :green_scenarios, :conditions => {:status => true } do
     def reset

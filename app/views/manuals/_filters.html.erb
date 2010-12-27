@@ -1,8 +1,10 @@
 <table class="filter" align="center">
   <tr>
     <td><i><h4>*<%= @iteration.title %>*</h4></i></td>
-    <td><i><h5 align="center">Blocked
-       <%= check_box_tag 'hide block', checked = true, :id => "hide-block" %></h5></i></td>
+    <td><i><h5 align="center">Untested
+       <%= check_box_tag 'hide untested', checked = true, :id => "hide-untested" %></h5></i></td>
+       <td><i><h5 align="center">Blocked
+          <%= check_box_tag 'hide block', checked = true, :id => "hide-block" %></h5></i></td>
     <td><i><h5 align="center">Failed
        <%= check_box_tag 'hide fail', checked = true, :id => "hide-fail" %></h5></i></td>
     <td><i><h5 align="center">Passed (<%= number_to_percentage(@pass_count, :precision => 0) %>)

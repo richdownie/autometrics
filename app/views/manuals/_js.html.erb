@@ -56,4 +56,16 @@ $("input#hide_block").click(function (){
     $("div#blocked").hide("fast");
 }
 });
+
+$("input#hide_untested").click(function (){
+
+  if ($("input#hide_untested").is(":checked"))
+{
+  $("div#untested").show("fast");
+}
+  else
+{ 
+    $("div#untested").hide("fast");
+}
+});
 </script>

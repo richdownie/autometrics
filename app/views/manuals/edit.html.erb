@@ -23,12 +23,12 @@
     collection_select(:manual, :iteration_id, @iterations, :id, :title, {:prompt => '*Required'}) %>
     <%= link_to(' Edit List', iterations_path) %>
   </p>
-</div>
-<p align="center" class="edit-blocked">
-  <b><%= f.label :blocked %></b><br/>
-  <%= f.check_box :blocked %> 
-</p>
-<div class="test-results" id="results">
+  </div>
+  <p align="center" class="edit-blocked">
+    <b><%= f.label :blocked %></b><br/>
+    <%= f.check_box :blocked %> 
+  </p>
+<div class="test-results" id="results">  
   <h2>Test Results</h2><p align="center"><%= f.label :test_count %><%= f.text_field :count, :size => "2x10" %></p>
   <p>
     <%= f.label :steps %><br />
