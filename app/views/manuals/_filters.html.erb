@@ -1,14 +1,14 @@
 <table class="filter" align="center">
   <tr>
     <td><i><h4>*<%= @iteration.title %>*</h4></i></td>
-    <td style="background:#CCFFFF"><i><h5 align="center">Idle
-       <%= check_box_tag 'hide untested', checked = true, :id => "hide-untested" %></h5></i></td>
-       <td style="background:#D0D0D0"><i><h5 align="center">Blocked
-          <%= check_box_tag 'hide block', checked = true, :id => "hide-block" %></h5></i></td>
-    <td style="background:#FFC1C1"><i><h5 align="center">Failed
-       <%= check_box_tag 'hide fail', checked = true, :id => "hide-fail" %></h5></i></td>
     <td style="background:#C0FF3E"><i><h5 align="center">Passed (<%= number_to_percentage(@pass_count, :precision => 0) %>)
        <%= check_box_tag 'hide pass', checked = true, :id => "hide-pass" %></h5></i></td>
-    <td><span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span></td>
+       <td style="background:#FFC1C1"><i><h5 align="center">Failed
+          <%= check_box_tag 'hide fail', checked = true, :id => "hide-fail" %></h5></i></td>
+        <td style="background:#D0D0D0"><i><h5 align="center">Blocked
+           <%= check_box_tag 'hide block', checked = true, :id => "hide-block" %></h5></i></td>
+           <td style="background:#CCFFFF"><i><h5 align="center">Idle
+              <%= check_box_tag 'hide untested', checked = true, :id => "hide-untested" %></h5></i></td>
+        <td><span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span></td>
   </tr>
 </table>

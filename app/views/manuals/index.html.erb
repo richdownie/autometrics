@@ -16,20 +16,22 @@
   <%= render :partial => 'filters' %>
 </div>
 
-<div class="manuals" id="untested">
-  <%= render :partial => 'untested' %>
-</div>
-
-<div class="manuals" id="blocked">
-  <%= render :partial => 'blocked' %>
+<div class="manuals" id="pass">
+  <%= render :partial => 'pass' %> 
 </div>
 
 <div class="manuals" id="fail">
   <%= render :partial => 'fail' %> 
 </div>
 
-<div class="manuals" id="pass">
-  <%= render :partial => 'pass' %> 
+<div class="manuals" id="blocked">
+  <%= render :partial => 'blocked' %>
 </div>
+
+<div class="manuals" id="untested">
+  <%= render :partial => 'untested' %>
+</div>
+
+
 
 <%= render :partial => 'js' %>
