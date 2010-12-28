@@ -1,0 +1,9 @@
+
+table#test-status {text-align:center; margin-left:auto; margin-right:auto; width:100px;}
+
+table#test-status th {
+	padding-left:5em;
+	padding-right:5em;
+}
+table#test-status td {
+}

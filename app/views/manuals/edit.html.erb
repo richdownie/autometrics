@@ -1,13 +1,8 @@
 
+<div class="test-criteria">
+<h2>Criteria</h2>
 <% form_for(@manual) do |f| %>
   <%= f.error_messages %>
-    <p align="center" class="edit-blocked">
-      <b><%= f.label :untested %></b><br/>
-      <%= f.check_box :untested %> 
-    </p>
-    
-    <div class="test-criteria">
-    <h2>Criteria</h2>
   <p>
     <b><a href="https://support.rollstream.com/browse/DEV-<%= @manual.jira %>" target="_blank"><%= f.label :jira %></a></b>
     <%= f.text_field :jira, :size => "3x10" %>
@@ -29,9 +24,26 @@
     <%= link_to(' Edit List', iterations_path) %>
   </p>
   </div>
+<table id="test-status">
+  <tr>
+    <th><%= f.label :idle %></th>
+    <th><%= f.label :blocked %></th>
+    <th><%= f.label :Pass? %></th>
+  </tr>
+  <tr>
+    <td style="background:#CCFFFF"><%= f.check_box :untested %></td>
+    <td style="background:#D0D0D0"><%= f.check_box :blocked %></td>
+    <% if @manual.status == true %>
+    <td style="background:#C0FF3E" id="green"><%= f.check_box :status %><td>
+    <% else %>
+    <td style="background:#FFC1C1" id="red"><%= f.check_box :status %></td>
+    <% end %>
+  </tr>
+</table>
+
   <p align="center" class="edit-blocked">
-    <b><%= f.label :blocked %></b><br/>
-    <%= f.check_box :blocked %> 
+    <b></b><br/>
+     
   </p>
 <div class="test-results" id="results">  
   <h2>Test Results</h2><p align="center"><%= f.label :test_count %><%= f.text_field :count, :size => "2x10" %></p>
@@ -39,25 +51,7 @@
     <%= f.label :steps %><br />
     <%= f.text_area :steps, :size => "97x10", :class => "mceEditor"  %>
   </p>
-  <table>
-    <tr>
-    <td><%= f.label :firefox %>
-    <%= f.check_box :firefox %></td>
-    <td><%= f.label :internet_explorer %>
-    <%= f.check_box :internet_explorer %></td>
-  </tr>
-</table>  
-   <p>
-    <%= f.label :Pass? %>
-      <% if @manual.firefox == true && @manual.internet_explorer == true || @manual.status == true %>
-      <%= f.check_box :status %> <span class="info-green">(OK)</span>
-      <% else %>
-      <%= f.check_box :status, :disabled => true, :readonly => true %> <span class="info-red">(Have you tested both FF and IE?)</span>
-      <% end %>
-   </p>
-  <p>
 
-  </p>
   <p align="center">
     <b><a href="https://support.rollstream.com/browse/DEV-<%= @manual.bug %>" target="_blank"><%= f.label :bug %></a></b>
     <%= f.text_field :bug, :size => "3x10"  %>
