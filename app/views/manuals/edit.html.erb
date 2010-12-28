@@ -1,8 +1,25 @@
+<% form_for(@manual) do |f| %>
+  <%= f.error_messages %>
+  
+<table id="test-status">
+  <tr>
+    <th><%= f.label :idle %></th>
+    <th><%= f.label :blocked %></th>
+    <th><%= f.label :Pass? %></th>
+  </tr>
+  <tr>
+    <td style="background:#CCFFFF"><%= f.check_box :untested %></td>
+    <td style="background:#D0D0D0"><%= f.check_box :blocked %></td>
+    <% if @manual.status == true %>
+    <td style="background:#C0FF3E" id="green"><%= f.check_box :status %><td>
+    <% else %>
+    <td style="background:#FFC1C1" id="red"><%= f.check_box :status %></td>
+    <% end %>
+  </tr>
+</table>
 
 <div class="test-criteria">
 <h2>Criteria</h2>
-<% form_for(@manual) do |f| %>
-  <%= f.error_messages %>
   <p>
     <b><a href="https://support.rollstream.com/browse/DEV-<%= @manual.jira %>" target="_blank"><%= f.label :jira %></a></b>
     <%= f.text_field :jira, :size => "3x10" %>
@@ -23,30 +40,7 @@
     collection_select(:manual, :iteration_id, @iterations, :id, :title, {:prompt => '*Required'}) %>
     <%= link_to(' Edit List', iterations_path) %>
   </p>
-  </div>
-<table id="test-status">
-  <tr>
-    <th><%= f.label :idle %></th>
-    <th><%= f.label :blocked %></th>
-    <th><%= f.label :Pass? %></th>
-  </tr>
-  <tr>
-    <td style="background:#CCFFFF"><%= f.check_box :untested %></td>
-    <td style="background:#D0D0D0"><%= f.check_box :blocked %></td>
-    <% if @manual.status == true %>
-    <td style="background:#C0FF3E" id="green"><%= f.check_box :status %><td>
-    <% else %>
-    <td style="background:#FFC1C1" id="red"><%= f.check_box :status %></td>
-    <% end %>
-  </tr>
-</table>
-
-  <p align="center" class="edit-blocked">
-    <b></b><br/>
-     
-  </p>
-<div class="test-results" id="results">  
-  <h2>Test Results</h2><p align="center"><%= f.label :test_count %><%= f.text_field :count, :size => "2x10" %></p>
+  <p align="center"><%= f.label :test_count %><%= f.text_field :count, :size => "2x10" %></p>
   <p>
     <%= f.label :steps %><br />
     <%= f.text_area :steps, :size => "97x10", :class => "mceEditor"  %>
