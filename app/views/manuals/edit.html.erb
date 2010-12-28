@@ -1,8 +1,13 @@
 
-<div class="test-criteria">
-<h2>Criteria</h2>
 <% form_for(@manual) do |f| %>
   <%= f.error_messages %>
+    <p align="center" class="edit-blocked">
+      <b><%= f.label :untested %></b><br/>
+      <%= f.check_box :untested %> 
+    </p>
+    
+    <div class="test-criteria">
+    <h2>Criteria</h2>
   <p>
     <b><a href="https://support.rollstream.com/browse/DEV-<%= @manual.jira %>" target="_blank"><%= f.label :jira %></a></b>
     <%= f.text_field :jira, :size => "3x10" %>
@@ -41,7 +46,7 @@
     <td><%= f.label :internet_explorer %>
     <%= f.check_box :internet_explorer %></td>
   </tr>
-</table>
+</table>  
    <p>
     <%= f.label :Pass? %>
       <% if @manual.firefox == true && @manual.internet_explorer == true || @manual.status == true %>

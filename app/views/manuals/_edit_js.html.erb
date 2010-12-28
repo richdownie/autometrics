@@ -4,6 +4,7 @@ $("input#manual_status").click(function (){
   if ($("input#manual_status").is(":checked"))
 {
   $("input#manual_blocked").removeAttr('disabled');
+  $("input#manual_untested").attr('disabled', true);
 }
 });
 
@@ -31,12 +32,22 @@ else
 }
 });
 
+
+$("input#manual_untested").click(function (){
+  if  ($("input#manual_untested").is(":checked"))
+    {
+    $("input#manual_blocked").attr('disabled', true);
+      $("input#manual_status").attr('disabled', true);
+    }
+});
+
 $("input#manual_blocked").click(function (){
 
   if ($("input#manual_blocked").is(":checked"))
 {
   $("div#results").hide("fast");
   $("input#manual_status").attr('disabled', true);
+  $("input#manual_untested").attr('disabled', true);
 }
   else
 { 
