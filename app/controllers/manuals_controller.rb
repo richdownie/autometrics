@@ -21,8 +21,8 @@ class ManualsController < ApplicationController
       @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ? and blocked = ?', "1", false], :order => 'tag_id ASC, created_at DESC')
       @manuals_blocked = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'tag_id ASC, created_at DESC')
       @manuals_untested = Manual.untested.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'tag_id ASC, created_at DESC')
-      @total = Manual.find(:all, :conditions => ['iteration_id = ?', "1"]).count
-      @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "1"]).count
+      @total = Manual.find(:all, :conditions => ['iteration_id = ?', "1"]).size
+      @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "1"]).size
     end
     @pass_count = @pass_count.to_f / @total.to_f * 100
     
