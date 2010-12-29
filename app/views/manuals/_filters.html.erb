@@ -11,4 +11,7 @@
               <%= check_box_tag 'hide untested', checked = true, :id => "hide-untested" %></h5></i></td>
         <td><span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span></td>
   </tr>
+  <tr>
+  <td><%= check_box_tag 'hide tags', checked = true, :id => "hide-tags" %>Hide Tags</td>
+  <td><%= check_box_tag 'hide jira', checked = true, :id => "hide-jira" %>Hide Jira</td>
 </table>

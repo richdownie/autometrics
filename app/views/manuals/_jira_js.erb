@@ -1,0 +1,15 @@
+<script>
+$("input#hide_jira").click(function (){
+
+  if ($("input#hide_jira").is(":checked"))
+{
+    $("td.jira-hide").show();
+    $("th.jira-hide").show();
+}
+  else
+{ 
+    $("td.jira-hide").hide();
+    $("th.jira-hide").hide();
+}
+});
+</script>
