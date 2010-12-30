@@ -19,7 +19,50 @@ $("span#search-info").hide();
 });
 $("td.bug").hover(function(){$(this).fadeOut(100);$(this).fadeIn(100);});
 
+$(document).ready(function() {
+    if ($("input#hide_pass").is(":checked"))
+  {
+    $("div#pass").show("fast");
+  }
+    else
+  { 
+    $("div#pass").hide("fast");
+  }
+  });
 
+$(document).ready(function() {
+    if ($("input#hide_fail").is(":checked"))
+  {
+    $("div#fail").show("fast");
+  }
+    else
+  { 
+    $("div#fail").hide("fast");
+  }
+  });
+
+$(document).ready(function() {
+    if ($("input#hide_block").is(":checked"))
+  {
+    $("div#blocked").show("fast");
+  }
+    else
+  { 
+    $("div#blocked").hide("fast");
+  }
+  });
+
+$(document).ready(function() {
+    if ($("input#hide_untested").is(":checked"))
+  {
+    $("div#untested").show("fast");
+  }
+    else
+  { 
+    $("div#untested").hide("fast");
+  }
+  });
+  
 $("input#hide_fail").click(function (){
 
   if ($("input#hide_fail").is(":checked"))
