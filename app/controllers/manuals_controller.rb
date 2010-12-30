@@ -14,7 +14,10 @@ class ManualsController < ApplicationController
       @manuals_blocked = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'tag_id ASC, created_at DESC')
       @manuals_untested = Manual.untested.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"], :order => 'tag_id ASC, created_at DESC')
       @total = Manual.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
-      @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ? and blocked = ?', "#{params[:search]}", false]).size
+      @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
+      @failed_count = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
+      @blocked_count = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
+      @untested_count = Manual.untested.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
     else
       @iteration = Iteration.find(:first, :conditions => ['id = ?', "1"])
       @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ? and blocked = ? and untested = ?', "1", false, false], :order => 'tag_id ASC, created_at DESC')
@@ -23,8 +26,10 @@ class ManualsController < ApplicationController
       @manuals_untested = Manual.untested.find(:all, :conditions => ['iteration_id = ?', "1"], :order => 'tag_id ASC, created_at DESC')
       @total = Manual.find(:all, :conditions => ['iteration_id = ?', "1"]).size
       @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "1"]).size
+      @failed_count = Manual.fail.find(:all, :conditions => ['iteration_id = ?', "1"]).size
+      @blocked_count = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', "1"]).size
+      @untested_count = Manual.untested.find(:all, :conditions => ['iteration_id = ?', "1"]).size
     end
-    @pass_count = @pass_count.to_f / @total.to_f * 100
     
     
   end

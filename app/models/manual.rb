@@ -6,7 +6,7 @@ class Manual < ActiveRecord::Base
   validates_numericality_of :count, :allow_nil => true
   
   
-  named_scope :fail, :conditions => {:status => [false, nil]}
+  named_scope :fail, :conditions => {:status => [false]}
   named_scope :pass, :conditions => {:status => true}
   named_scope :blocked, :conditions => {:blocked => true}
   named_scope :untested, :conditions => {:untested => true} do
