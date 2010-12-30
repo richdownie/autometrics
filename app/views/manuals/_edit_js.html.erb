@@ -6,7 +6,9 @@ $("input#manual_untested").click(function (){
   if ($("input#manual_untested").is(":checked"))
 {
   $("input#manual_status").attr('disabled', true);
+  $("input#manual_status").attr('checked', false);
   $("input#manual_blocked").attr('disabled', true);
+  $("input#manual_blocked").attr('checked', false);
   $("div.test-criteria").css("background-color", "#CCFFFF");
 }
   else
@@ -34,7 +36,9 @@ $("input#manual_blocked").click(function (){
   if ($("input#manual_blocked").is(":checked"))
 {
   $("input#manual_status").attr('disabled', true);
+  $("input#manual_status").attr('checked', false);
   $("input#manual_untested").attr('disabled', true);
+  $("input#manual_untested").attr('checked', false);
   $("div.test-criteria").css("background-color", "#D0D0D0");
 }
   else
@@ -60,7 +64,9 @@ $(document).ready(function() {
     if ($("input#manual_status").is(":checked"))
   {
     $("input#manual_untested").attr('disabled', true);
-    $("input#manual_blocked").attr('disabled', true);
+    $("input#manual_untested").attr('checked', false);
+    $("input#manual_blocked").attr('disabled', true);      
+    $("input#manual_blocked").attr('checked', false);
     $("div.test-criteria").css("background-color", "#C0FF3E");
   }
     else
