@@ -62,18 +62,6 @@ $(document).ready(function() {
     $("div#untested").hide("fast");
   }
   });
-  
-$("input#hide_fail").click(function (){
-
-  if ($("input#hide_fail").is(":checked"))
-{
-  $("div#fail").show("fast");
-}
-  else
-{ 
-    $("div#fail").hide("fast");
-}
-});
 
 
 $("input#hide_pass").click(function (){
@@ -81,10 +69,35 @@ $("input#hide_pass").click(function (){
   if ($("input#hide_pass").is(":checked"))
 {
   $("div#pass").show("fast");
+  $("input#hide_fail").attr('checked', false);
+  $("input#hide_block").attr('checked', false);
+  $("input#hide_untested").attr('checked', false);
+  $("div#fail").hide("fast")
+  $("div#blocked").hide("fast");
+  $("div#untested").hide("fast");
 }
   else
 { 
     $("div#pass").hide("fast");
+}
+});
+
+
+$("input#hide_fail").click(function (){
+
+  if ($("input#hide_fail").is(":checked"))
+{
+  $("div#fail").show("fast");
+  $("input#hide_pass").attr('checked', false);
+  $("input#hide_block").attr('checked', false);
+  $("input#hide_untested").attr('checked', false);
+  $("div#pass").hide("fast");
+  $("div#blocked").hide("fast");
+  $("div#untested").hide("fast");
+}
+  else
+{ 
+    $("div#fail").hide("fast");
 }
 });
 
@@ -93,6 +106,12 @@ $("input#hide_block").click(function (){
   if ($("input#hide_block").is(":checked"))
 {
   $("div#blocked").show("fast");
+  $("input#hide_pass").attr('checked', false);
+  $("input#hide_fail").attr('checked', false);
+  $("input#hide_untested").attr('checked', false);
+  $("div#pass").hide("fast");
+  $("div#fail").hide("fast");
+  $("div#untested").hide("fast");
 }
   else
 { 
@@ -105,6 +124,12 @@ $("input#hide_untested").click(function (){
   if ($("input#hide_untested").is(":checked"))
 {
   $("div#untested").show("fast");
+  $("input#hide_pass").attr('checked', false);
+  $("input#hide_fail").attr('checked', false);
+  $("input#hide_block").attr('checked', false);
+  $("div#pass").hide("fast");
+  $("div#fail").hide("fast");
+  $("div#blocked").hide("fast");
 }
   else
 { 
