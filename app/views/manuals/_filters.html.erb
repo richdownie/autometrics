@@ -3,7 +3,7 @@
     <td><i><h4>*<%= @iteration.title %>*</h4></i></td>
     <td style="background:#C0FF3E"><i><h5 align="center">Passed (<%= @pass_count %>)
        <%= check_box_tag 'hide pass', false %></h5></i></td>
-       <td style="background:#FFC1C1"><i><h5 align="center">Failed
+       <td style="background:#FFC1C1"><i><h5 align="center">Failed ( <%= @failed_count %> )
           <%= check_box_tag 'hide fail', checked = true, :id => "hide-fail" %></h5></i></td>
         <td style="background:#D0D0D0"><i><h5 align="center">Blocked (<%= @blocked_count %> )
            <%= check_box_tag 'hide block', false %></h5></i></td>
