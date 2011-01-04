@@ -10,9 +10,7 @@
   <tr>
     <td><%=h iteration.title %></td>
       <td><%=h iteration.default %></td>
-    <td><%= link_to 'Show', iteration %></td>
     <td><%= link_to 'Edit', edit_iteration_path(iteration) %></td>
-    <td><%= link_to 'Destroy', iteration, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
