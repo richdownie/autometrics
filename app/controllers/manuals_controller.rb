@@ -19,16 +19,16 @@ class ManualsController < ApplicationController
       @blocked_count = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
       @untested_count = Manual.untested.find(:all, :conditions => ['iteration_id = ?', "#{params[:search]}"]).size
     else
-      @iteration = Iteration.find(:first, :conditions => ['id = ?', "2"])
-      @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ? and blocked = ? and untested = ?', "2", false, false], :order => 'tag_id ASC, created_at DESC')
-      @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ? and blocked = ?', "2", false], :order => 'tag_id ASC, created_at DESC')
-      @manuals_blocked = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', "2"], :order => 'tag_id ASC, created_at DESC')
-      @manuals_untested = Manual.untested.find(:all, :conditions => ['iteration_id = ?', "2"], :order => 'tag_id ASC, created_at DESC')
-      @total = Manual.find(:all, :conditions => ['iteration_id = ?', "2"]).size
-      @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', "2"]).size
-      @failed_count = Manual.fail.find(:all, :conditions => ['iteration_id = ? and blocked = ? and untested = ?', "2", false, false]).size
-      @blocked_count = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', "2"]).size
-      @untested_count = Manual.untested.find(:all, :conditions => ['iteration_id = ?', "2"]).size
+      @iteration = Iteration.find(:first, :conditions => { :default => true})
+      @manuals_fail = Manual.fail.find(:all, :conditions => ['iteration_id = ? and blocked = ? and untested = ?', @iteration, false, false], :order => 'tag_id ASC, created_at DESC')
+      @manuals_pass = Manual.pass.find(:all, :conditions => ['iteration_id = ? and blocked = ?', @iteration, false], :order => 'tag_id ASC, created_at DESC')
+      @manuals_blocked = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', @iteration], :order => 'tag_id ASC, created_at DESC')
+      @manuals_untested = Manual.untested.find(:all, :conditions => ['iteration_id = ?', @iteration], :order => 'tag_id ASC, created_at DESC')
+      @total = Manual.find(:all, :conditions => ['iteration_id = ?', @iteration]).size
+      @pass_count = Manual.pass.find(:all, :conditions => ['iteration_id = ?', @iteration]).size
+      @failed_count = Manual.fail.find(:all, :conditions => ['iteration_id = ? and blocked = ? and untested = ?', @iteration, false, false]).size
+      @blocked_count = Manual.blocked.find(:all, :conditions => ['iteration_id = ?', @iteration]).size
+      @untested_count = Manual.untested.find(:all, :conditions => ['iteration_id = ?', @iteration]).size
     end
     
     
