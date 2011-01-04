@@ -1,8 +1,11 @@
-<% form_tag manuals_path, :method => 'get' do %>
-  <table>
-    <tr>
-      <td><%= select_tag "search", options_from_collection_for_select(Iteration.all, :id, :title, {:include_blank => 'None'}), :multiple => true %></td>
-      <td><%= submit_tag "Search", :name => nil %></td>
-    </tr>
-  </table>
-<% end %>
+
+<h2><%= link_to @iteration.title, iterations_path %></h2><div align="center">
+  <% form_tag manuals_path, :method => 'get' do %>
+    <table>
+      <tr>
+        <td><%= select_tag "search", options_from_collection_for_select(Iteration.all, :id, :title, {:include_blank => 'None'}), :multiple => true %></td>
+        <td><%= submit_tag "Search", :name => nil %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
