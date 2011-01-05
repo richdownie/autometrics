@@ -1,6 +1,23 @@
 class IterationsController < ApplicationController
   # GET /iterations
   # GET /iterations.xml
+  
+  def set_default
+    Iteration.defaults.reset
+    @iteration = Iteration.find(params[:id])
+    respond_to do |format|
+      if @iteration.update_attributes(:default => true)
+        flash[:notice] = 'Iteration was successfully updated.'
+        format.html { redirect_to iterations_path }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @iteration.errors, :status => :unprocessable_entity }
+      end
+    end
+
+  end
+  
   def index
     @iterations = Iteration.all
 

@@ -10,6 +10,7 @@
   <tr>
     <td><%=h iteration.title %></td>
       <td><%=h iteration.default %></td>
+    <td><%= link_to 'Default', set_default_path(:id => iteration.id) %></td>
     <td><%= link_to 'Edit', edit_iteration_path(iteration) %></td>
   </tr>
 <% end %>
