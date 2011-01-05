@@ -5,7 +5,7 @@
    <td style="background:#CCFFFF"><i><h5 align="center">Not Tested ( <%= @untested_count %> )
       <%= check_box_tag 'hide untested', false  %></h5></i></td>
        <td style="background:#FFC1C1"><i><h5 align="center">Failed ( <%= @failed_count %> )
-          <%= check_box_tag 'hide fail', checked = true, :id => "hide-fail" %></h5></i></td>
+          <%= check_box_tag 'hide fail', false %></h5></i></td>
     <td style="background:#C0FF3E"><i><h5 align="center">Passed (<%= @pass_count %>)
        <%= check_box_tag 'hide pass', false %></h5></i></td>
         <td><span id="add-button"><%= link_to image_tag("/images/add.png", :border => 0, :height => 30, :width => 30), new_manual_path %></span></td>
