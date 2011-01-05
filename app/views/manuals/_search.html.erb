@@ -1,11 +1,15 @@
 
-<h2><%= link_to @iteration.title, iterations_path %></h2>
-<div>
+<h2><span>*<%= link_to @iteration.title, iterations_path %>*</span><span><%= image_tag("/images/filter.png", :border => 0, :height => 30, :width => 30, :id => 'filter-icon') %></h2></span>
+<div align="center" id="search-stuff">
  <% form_tag manuals_path, :method => 'get' do %>
     <table>
       <tr>
         <td><%= select_tag "search", options_from_collection_for_select(Iteration.all, :id, :title, {:include_blank => 'None'}), :multiple => true, :order => :title %></td>
         <td><%= submit_tag "Search", :name => nil %></td>
+      </tr>
+      <tr>
+      <td><%= check_box_tag 'hide tags', checked = true, :id => "hide-tags" %>Tags</td>
+      <td><%= check_box_tag 'hide jira', checked = true, :id => "hide-jira" %>Jira</td>
       </tr>
     </table>
   <% end %>
