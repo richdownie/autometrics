@@ -13,10 +13,11 @@
   <tr>
   <% if iteration.default == true %>
     <td>*<%= link_to (iteration.title), set_default_path(:id => iteration.id) %>*</td>
+      <td></td>
   <% else %>  
       <td><%= link_to (iteration.title), set_default_path(:id => iteration.id) %></td>
+        <td><small>(<%= link_to 'Edit', edit_iteration_path(iteration) %>)</small></td>
   <% end %>  
-    <td><small>(<%= link_to 'Edit', edit_iteration_path(iteration) %>)</small></td>
   </tr>
 <% end %>
 </table>
