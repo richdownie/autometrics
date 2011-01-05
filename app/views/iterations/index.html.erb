@@ -1,22 +1,26 @@
-<h1>Listing iterations</h1>
 
-<table>
+<div align="center">
+<h1>Manage Iterations</h1>
+
+<table class="filter">
   <tr>
-    <th>Title</th>
-      <th>Default</th>
+    <th></th>
+      <th></th>
   </tr>
 
 <% @iterations.each do |iteration| %>
   <tr>
-    <td><%=h iteration.title %></td>
-      <td><%=h iteration.default %></td>
-    <td><%= link_to 'Default', set_default_path(:id => iteration.id) %></td>
-    <td><%= link_to 'Edit', edit_iteration_path(iteration) %></td>
+  <% if iteration.default == true %>
+    <td>*<%= link_to (iteration.title), set_default_path(:id => iteration.id) %>*</td>
+  <% else %>  
+      <td><%= link_to (iteration.title), set_default_path(:id => iteration.id) %></td>
+  <% end %>  
+    <td><small>(<%= link_to 'Edit', edit_iteration_path(iteration) %>)</small></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New iteration', new_iteration_path %> | <br/>
-<%= link_to 'Back to Manual Steps', manuals_path %>
+<%= link_to 'Add Iteration', new_iteration_path %>
+</div>

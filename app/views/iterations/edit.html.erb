@@ -15,6 +15,4 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @iteration %> |
-<%= link_to 'Back', iterations_path %>
+<div align="center"><%= button_to 'Delete', iteration_path, :method => :delete %><%= link_to 'Back', iterations_path %></div>

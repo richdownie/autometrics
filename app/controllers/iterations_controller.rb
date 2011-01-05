@@ -8,7 +8,7 @@ class IterationsController < ApplicationController
     respond_to do |format|
       if @iteration.update_attributes(:default => true)
         flash[:notice] = 'Iteration was successfully updated.'
-        format.html { redirect_to iterations_path }
+        format.html { redirect_to manuals_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -62,7 +62,7 @@ class IterationsController < ApplicationController
     respond_to do |format|
       if @iteration.save
         flash[:notice] = 'Iteration was successfully created.'
-        format.html { redirect_to(@iteration) }
+        format.html { redirect_to iterations_path }
         format.xml  { render :xml => @iteration, :status => :created, :location => @iteration }
       else
         format.html { render :action => "new" }
