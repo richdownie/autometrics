@@ -1,6 +1,6 @@
 
-<h2><span>*<%= link_to @iteration.title, iterations_path %>*</span><span><%= image_tag("/images/filter.png", :border => 0, :height => 30, :width => 30, :id => 'filter-icon') %></h2></span>
-<div align="center" id="search-stuff">
+<h2><span><%= link_to @iteration.title, iterations_path %></span><span><%= image_tag("/images/filter.png", :border => 0, :height => 20, :width => 20, :id => 'filter-icon') %></h2></span>
+<div align="center" id="search-stuff" style="display:none">
  <% form_tag manuals_path, :method => 'get' do %>
     <table>
       <tr>
@@ -14,3 +14,5 @@
     </table>
   <% end %>
 </div>
+
+<%= render :partial => 'search_js' %>
