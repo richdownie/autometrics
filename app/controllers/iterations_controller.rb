@@ -7,7 +7,7 @@ class IterationsController < ApplicationController
     @iteration = Iteration.find(params[:id])
     respond_to do |format|
       if @iteration.update_attributes(:default => true)
-        flash[:notice] = 'Iteration was successfully updated.'
+        flash[:notice] = "#{@iteration.title} is now the default."
         format.html { redirect_to manuals_path }
         format.xml  { head :ok }
       else
