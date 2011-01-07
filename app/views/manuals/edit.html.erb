@@ -10,11 +10,7 @@
   <tr>
     <td style="background:#CCFFFF"><%= f.check_box :untested %></td>
     <td style="background:#D0D0D0"><%= f.check_box :blocked %></td>
-    <% if @manual.status == true %>
-    <td style="background:#C0FF3E" id="green"><%= f.check_box :status %><td>
-    <% else %>
-    <td style="background:#FFC1C1" id="red"><%= f.check_box :status %></td>
-    <% end %>
+    <td><%= f.check_box :status %><td>
   </tr>
 </table>
 
