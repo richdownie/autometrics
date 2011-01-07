@@ -15,6 +15,7 @@ $("input#manual_untested").click(function (){
 { 
     $("input#manual_status").attr('disabled', false);
     $("input#manual_blocked").attr('disabled', false);
+    $("div.test-criteria").css("background-color", "#FFC1C1");
 }
 });
 $(document).ready(function() {
@@ -45,6 +46,7 @@ $("input#manual_blocked").click(function (){
 { 
     $("input#manual_status").attr('disabled', false);
     $("input#manual_untested").attr('disabled', false);
+    $("div.test-criteria").css("background-color", "#FFC1C1");
 }
 });
 
